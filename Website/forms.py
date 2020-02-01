@@ -12,7 +12,7 @@ class RegistrationFrom(FlaskForm):
     submit = SubmitField('Submit')
 
     def validate_email(self, email):
-        user = Subscriber.query.filter_by(email=email.data).first()
-        if user:
+        subscriber = Subscriber.query.filter_by(email=email.data).first()
+        if subscriber:
             raise ValidationError(
                 'That email is taken. Please choose another one.')
