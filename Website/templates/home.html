@@ -1,4 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>hello world</h1>
+<h1>Welcome! to Skagit county notification central!</h1>
+<div>
+    {{ form.email() }}
+    {{ form.email.label()}}
+</div>
 {% endblock content %}
