@@ -8,3 +8,4 @@ class RegistrationFrom(FlaskForm):
     skagit_county = BooleanField("Skagit County")
     weather = BooleanField("Weather")
     sports = BooleanField("Sports")
+    submit = SubmitField('Submit')
