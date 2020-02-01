@@ -1,8 +1,27 @@
 {% extends "layout.html" %}
 {% block content %}
 <h1>Welcome! to Skagit county notification central!</h1>
+<h2>Please enter your email address.</h2>
 <div>
     {{ form.email() }}
-    {{ form.email.label()}}
+    {{ form.email.label() }}
+</div>
+<h2>Area</h2>
+<div>
+    {{ form.everett() }}
+    {{ form.everett.label() }}
+</div>
+<div>
+    {{ form.skagit_county() }}
+    {{ form.skagit_county.label() }}
+</div>
+<h2>Topic</h2>
+<div>
+    {{ form.weather() }}
+    {{ form.weather.label() }}
+</div>
+<div>
+    {{ form.sports() }}
+    {{ form.sports.label() }}
 </div>
 {% endblock content %}
