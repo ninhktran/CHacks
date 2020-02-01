@@ -7,4 +7,4 @@ def check_valid_email(email):
     else:
         return False
 
-    pass
+    passdef get_interested_subs(areas,topics):
