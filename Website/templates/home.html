@@ -2,26 +2,36 @@
 {% block content %}
 <h1>Welcome! to Skagit county notification central!</h1>
 <h2>Please enter your email address.</h2>
-<div>
-    {{ form.email() }}
-    {{ form.email.label() }}
-</div>
-<h2>Area</h2>
-<div>
-    {{ form.everett() }}
-    {{ form.everett.label() }}
-</div>
-<div>
-    {{ form.skagit_county() }}
-    {{ form.skagit_county.label() }}
-</div>
-<h2>Topic</h2>
-<div>
-    {{ form.weather() }}
-    {{ form.weather.label() }}
-</div>
-<div>
-    {{ form.sports() }}
-    {{ form.sports.label() }}
-</div>
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Subcribe</legend>
+        <div class="form-group">
+            {{ form.email.label() }}
+            {{ form.email() }}
+
+        </div>
+        <h2>Area</h2>
+        <div>
+            {{ form.everett() }}
+            {{ form.everett.label() }}
+        </div>
+        <div>
+            {{ form.skagit_county() }}
+            {{ form.skagit_county.label() }}
+        </div>
+        <h2>Topic</h2>
+        <div>
+            {{ form.weather() }}
+            {{ form.weather.label() }}
+        </div>
+        <div>
+            {{ form.sports() }}
+            {{ form.sports.label() }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </fieldset>
+</form>
 {% endblock content %}
