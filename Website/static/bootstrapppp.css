@@ -2140,8 +2140,8 @@ pre code {
 }
 
 .form-control {
-	display: block;
-	width: 100%;
+	display: inline-block;
+	width: 50%;
 	height: calc(1.5em + .75rem + 2px);
 	padding: .375rem .75rem;
 	font-size: 1rem;
@@ -2287,11 +2287,6 @@ textarea.form-control {
 	height: auto
 }
 
-.form-group {
-    margin-top: 4em;
-	margin-bottom: 1rem
-}
-
 .form-text {
 	display: block;
 	margin-top: .25rem
@@ -2425,6 +2420,11 @@ textarea.form-control.is-valid {
 .was-validated .form-check-input:valid~.valid-tooltip {
 	display: block
 }
+
+.checkbox_this {
+	font-size: 30px;
+}
+
 
 .custom-control-input.is-valid~.custom-control-label,
 .was-validated .custom-control-input:valid~.custom-control-label {
@@ -2825,13 +2825,15 @@ fieldset:disabled a.btn {
 .btn-info {
 	color: #fff;
 	background-color: #17a2b8;
-	border-color: #17a2b8
+	border-color: #17a2b8;
+	font-size: 26px !important;
+	margin-top: 25px;
 }
 
 .btn-info:hover {
 	color: #fff;
 	background-color: #138496;
-	border-color: #117a8b
+	border: none
 }
 
 .btn-info.focus,
@@ -4032,9 +4034,23 @@ input[type=submit].btn-block {
 	background-color: #e9ecef
 }
 
+ .checkbox-xl .custom-control-label::before,
+    .checkbox-xl .custom-control-label::after {
+      top: 1.2rem;
+      width: 1.85rem;
+      height: 1.85rem;
+    }
+
+    .checkbox-xl .custom-control-label {
+      padding-top: 23px;
+      padding-left: 10px;
+    }
+
 .custom-control-label {
+	font-size: 17px;
 	position: relative;
 	margin-bottom: 0;
+	color: white;
 	vertical-align: top
 }
 
