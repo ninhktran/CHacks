@@ -1,59 +1,59 @@
 import smtplib
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
 import email as e
 
-MY_ADDRESS = 'alphatester721@gmail.com'
-PASSWORD = '@Mamamia2'
 
-def get_contacts(filename):
-    """
-    Return one list of email addresses
-    read from a file specified by filename.
-    """
-    emails = []
-    with open(filename, mode='r', encoding='utf-8') as contacts_file:
-        for a_contact in contacts_file.read().split('\n'):
-            emails.append(a_contact)
-    return emails
+class MessageSender:
+    MY_ADDRESS = 'alphatester721@gmail.com'
+    PASSWORD = '@Mamamia2'
+    CONTACTS = 'contacts'
 
+    def __init__(self):
+        self.main()
 
-def read_message(filename):
-    """
-    Returns a String a of the bytes_message
-    """
+    def main(self):
+        MessageSender.send_message()
 
-    with open(filename, 'r') as f:
-        template_file_content = f.read()
-    return template_file_content
+    @staticmethod
+    def get_contacts(filename):
+        """
+        Return one list of email addresses
+        read from a file specified by filename.
+        """
+        emails = []
+        with open(filename, mode='r', encoding='utf-8') as contacts_file:
+            for a_contact in contacts_file.read().split('\n'):
+                emails.append(a_contact)
+        return emails
 
+    @staticmethod
+    def read_message(filename):
+        """
+        Returns a String a of the bytes_message
+        """
 
-def main():
-    emails = get_contacts('mycontacts2')  # read contacts
-    email_data = read_message('string_message')
+        with open(filename, 'r') as f:
+            template_file_content = f.read()
+        return template_file_content
 
-    # set up the SMTP server
-    s = smtplib.SMTP(host='smtp.gmail.com', port=587)
+    @staticmethod
+    def send_message():
+        emails = MessageSender.get_contacts(MessageSender.CONTACTS)  # read contacts
+        email_data = MessageSender.read_message('string_message')
 
-    s.starttls()
-    s.login(MY_ADDRESS, PASSWORD)
-    message = e.message_from_string(email_data)
-    # For each contact, send the email:
-    for email in emails:
-        print(email)
-        s.sendmail(MY_ADDRESS, email, message.as_string())
+        # set up the SMTP server
+        s = smtplib.SMTP(host='smtp.gmail.com', port=587)
 
+        s.starttls()
+        s.login(MessageSender.MY_ADDRESS, MessageSender.PASSWORD)
+        message = e.message_from_string(email_data)
+        # For each contact, send the email:
+        for email in emails:
+            print(email)
+            s.sendmail(MessageSender.MY_ADDRESS, email, message.as_string())
 
-    # Terminate the SMTP session and close the connection
-    s.quit()
+        # Terminate the SMTP session and close the connection
+        s.quit()
 
 
 if __name__ == '__main__':
-    main()
-
-
-
-
-
-
-
+    MessageSender()
