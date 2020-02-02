@@ -51,6 +51,7 @@ class MessageSender:
             print(email)
             s.sendmail(MessageSender.MY_ADDRESS, email, message.as_string())
 
+
         # Terminate the SMTP session and close the connection
         s.quit()
 
