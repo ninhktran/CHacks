@@ -4,13 +4,52 @@ from Website.find_sub import get_meta_data
 from Website.dbQuery import check_valid_email, get_interested_subs
 from Website.sortCat import get_cat_dict as gcd
 import time
-class EmailForwarder:
-    def __init__(self):
 
+
+class EmailForwarder:
+    cat_dict = {'Calendar': ['holiday',
+                             'meeting',
+                             'date',
+                             'board',
+                             'commission'],
+                'Emergency': ['accident',
+                              'breaking',
+                              'earthquake',
+                              'emergency',
+                              'alert',
+                              'break',
+                              'urgent',
+                              'crisis',
+                              'disaster',
+                              'fatal'],
+                'Traffic': ['jam',
+                            'late',
+                            'busy',
+                            'traffic',
+                            'crash',
+                            'accidents',
+                            'construction'],
+                'Weather': ['forecast',
+                            'rain',
+                            'sunny',
+                            'blizzard',
+                            'breeze',
+                            'climate',
+                            'wind',
+                            'weather',
+                            'warm',
+                            'storm',
+                            'thunder',
+                            'snow',
+                            'smog',
+                            'hail',
+                            'fog',
+                            'frost']}
+
+    def __init__(self):
         while True:
             self.main()
-            time.sleep(1)
-
+            # time.sleep(1)
 
     def main(self):
         MessageReciever()
@@ -38,12 +77,11 @@ class EmailForwarder:
             else:
                 print("that email wasn't a valid gov email")
 
-
     @staticmethod
     def get_topic_area(subject):
         lower_sub = subject.lower()
-        locations = ['everett', 'lake stevens','snohomish county']
-        d = gcd()
+        locations = ['everett', 'lake stevens', 'snohomish county']
+        d = EmailForwarder.cat_dict
         matching_loc = []
         matching_topics = []
         for location in locations:
@@ -62,7 +100,3 @@ class EmailForwarder:
 
 if __name__ == "__main__":
     EmailForwarder()
-
-
-
-

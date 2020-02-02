@@ -1,6 +1,6 @@
 from flask import render_template, url_for, flash, redirect
 from Website import app, db
-from Website.forms import RegistrationFrom
+from Website.forms import RegistrationFrom, UnSubscribeForm
 from Website.models import Subscriber
 
 @app.route("/", methods=['GET','POST'])
@@ -24,6 +24,17 @@ def home():
 
 
     return render_template("home.html", form=form)
+
+@app.route("/unsub", methods=['GET', 'POST'])
+def unsub():
+    form = UnSubscribeForm()
+    if form.validate_on_submit():
+        if (user := db.session.query( email=form.email.data )):
+            db.session.remove(user)
+        else:
+            print("that shouldn't have happened")
+            raise Exception
+    return render_template('unsub.html', form=form)
 
 
 
