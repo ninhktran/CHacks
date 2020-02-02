@@ -26,13 +26,18 @@ def home():
     return render_template("home.html", form=form)
 
 
-@app.route("/unsub", methods=['GET', 'POST'])
+@app.route("/unsub", methods=['GET', 'POST', 'DELETE'])
 def unsub():
     form = UnSubscribeForm()
     if form.validate_on_submit():
-        if (user := db.session.query(email=form.email.data)):
-            db.session.remove(user)
-            flash(f'Your account has been deleted! You will no longer receive messages from us.')
+        user = Subscriber.query.filter_by(email=form.email.data).first()
+        print(user)
+        if user:
+            id = user.id
+            print(id)
+            Subscriber.query.filter_by(id=id).delete()
+            db.session.commit()
+        flash(f'Your account has been deleted! You will no longer receive messages from us.')
 
     return render_template('unsub.html', form=form)
 
