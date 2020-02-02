@@ -23,4 +23,11 @@ def home():
         print('form not valid')
 
 
-    return render_template("home.html", form=form)
+    return render_template("home.html", form=form)def prepare_sub_data(form):
+    area_string = ','.join([
+        'everett'*form.everett.data,
+        'skagit_county'*form.skagit_county.data])
+    topic_string = ','.join([
+        'weather'*form.weather.data,
+        'sports'*form.sports.data])
+    return area_string, topic_string
