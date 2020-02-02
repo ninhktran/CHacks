@@ -51,30 +51,35 @@ class EmailForwarder:
 
     @staticmethod
     def main():
-        MessageReciever()
-        to, frm, subject = EmailForwarder.get_meta_data()
-        if frm:
-            print(frm)
-            clean_frm = frm.split()[-1]
-            clean_frm = clean_frm.split("<")[1]
-            clean_frm = clean_frm.split(">")[0]
-            subject = str(subject)
-            print(to, clean_frm, subject)
-            if check_valid_email(clean_frm):
-                area, topic = EmailForwarder.get_topic_area(subject)
-                addresses = get_interested_subs(area, topic)
-                output = ""
-                for address in addresses:
-                    output += ("citizen kane" + " <" + address + ">\n")
-                output = output[:-2]
-                print(output)
-                with open('contacts', 'w') as f:
-                    f.write("")
-                with open("contacts", 'a') as f:
-                    f.write(output)
-                MessageSender()
-            else:
-                print("that email wasn't a valid gov email")
+        if not MessageReciever.check_for_new():
+            return
+        else:
+            to, frm, subject = EmailForwarder.get_meta_data()
+            if frm:
+                clean_frm = EmailForwarder.clean_sender(frm)
+                subject = str(subject)
+                print(to, clean_frm, subject)
+                if check_valid_email(clean_frm):
+                    area, topic = EmailForwarder.get_topic_area(subject)
+                    addresses = get_interested_subs(area, topic)
+                    output = ""
+                    for address in addresses:
+                        output += ("citizen kane" + " <" + address + ">\n")
+                    output = output[:-2]
+                    print("matched addresses: " + output)
+                    with open('contacts', 'w') as f:
+                        f.write("")
+                    with open("contacts", 'a') as f:
+                        f.write(output)
+                    MessageSender()
+                else:
+                    print("that email wasn't a valid gov email")
+    @staticmethod
+    def clean_sender(sender):
+        clean_frm = sender.split()[-1]
+        clean_frm = clean_frm.split("<")[1]
+        clean_frm = clean_frm.split(">")[0]
+
 
     @staticmethod
     def get_topic_area(subject):
