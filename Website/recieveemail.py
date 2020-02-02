@@ -29,7 +29,7 @@ class MessageReciever:
 
     @staticmethod
     def write_msg():
-        msgs = get_msg()
+        msgs = MessageReciever.get_msg()
         # print(msgs)
         with open("bytes_message", 'w') as f:
             f.write("")
@@ -44,4 +44,4 @@ class MessageReciever:
                 f.write(str(m.decode("ASCII")))
 
 if __name__ == "__main__":
-    write_msg()
+    MessageReciever()
