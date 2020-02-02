@@ -4,6 +4,7 @@
     <div class="main_page" id="section1">
         <div class="welcome-text">Welcome! to Snohomish county notification central!</div>
         <div class="secondary-text">Unsubscribe to stop receiving notifications from local government agencies</div>
+        <br><br>
         {#
         <button class="subscribe" onclick="window.location.href = '#section2'">Subscribe</button>
         #}
@@ -13,6 +14,7 @@
         <div class="form-group">
             {% if form.email.errors %}
             {{ form.email( class="form-control form-control-lg" )}}
+            <br><br>
             <label class="email_prompt">We don't have that address</label>
             <div class="invalid-feedback">
                 {% for error in form.email.errors %}

@@ -7,10 +7,11 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <header>
-    <div class="link-box">
-    <a class="nav-item nav-link home-link links" href="{{ url_for('home') }}">Home</a>
-    <a class="nav-item nav-link unsub-link links" href="{{ url_for('unsub') }}">Unsubscribe</a>
-    </div>
+
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('unsub') }}">Unsubscribe</a></li>
+    </ul>
 </header>
 <body>
 {% with messages = get_flashed_messages(with_categories=True) %}
