@@ -24,7 +24,6 @@ class RegistrationFrom(FlaskForm):
 
 class UnSubscribeForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
-    are_you_sure = BooleanField('Are you sure you want to unsubscribe?')
     submit = SubmitField('Submit')
 
     def validate_email(self, email):
@@ -32,7 +31,3 @@ class UnSubscribeForm(FlaskForm):
         if not subscriber:
             raise ValidationError(
                 'That email is not in our system.')
-    #
-    # def validate_certainty(self, are_you_sure):
-    #     if not are_you_sure.data:
-    #         raise ValidationError('click to be sure')
