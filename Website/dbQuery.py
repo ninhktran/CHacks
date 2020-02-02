@@ -11,6 +11,6 @@ def get_interested_subs(areas,topics):
     pass
 
 # print(check_valid_email("bigbrother@gmail.com"))
-# get_interested_subs(['everett'],['weather'])
+get_interested_subs(['everett'],['weather'])
 
 # possible email agency addresses listserv@civicplus.com
