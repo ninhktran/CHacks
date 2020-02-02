@@ -25,7 +25,7 @@ def get_interested_subs(area,topic):
         if area_match and topic_match:
             matched_adds.append(sub.email)
 
-#hello
+
 
     print(matched_adds)
     return matched_adds
