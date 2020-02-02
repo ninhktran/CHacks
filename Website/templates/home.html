@@ -1,47 +1,49 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>Welcome! to Skagit county notification central!</h1>
-<h2>Please enter your email address.</h2>
-<form method="POST" action="">
-    {{ form.hidden_tag() }}
-    <fieldset class="form-group">
-        <legend class="border-bottom mb-4">Subcribe</legend>
-        <div class="form-group">
-        {{ form.email.label() }}
-        {% if form.email.errors %}
-          {{ form.email()}}
-        <div class="invalid-feedback">
-          {% for error in form.email.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        </div>
-        {% else %}
-          {{ form.email() }}
-        {% endif %}
-      </div>
+    <section class="main_page" id="section1">
+        <div class="welcome-text">Welcome! to Skagit county notification central!</div>
+        <div class="secondary-text">Sign up to receive notifications from local gov agencies</div>
+        <button class="subscribe" onclick="window.location.href = '#section2'">Subscribe</button>
+    </section>
+    <div class="container">
+        <form method="POST" action="">
+        {{ form.hidden_tag() }}
+            <div class="form-group" id="section2">
+                    {% if form.email.errors %}
+                        {{ form.email( class="form-control form-control-lg" )}}
+                        <label class="email_prompt">Please enter your email address</label>
+                        <span class="enter"></span>
+                        <div class="invalid-feedback">
+                          {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                          {% endfor %}
+                        </div>
+                        {% else %}
+                          {{ form.email() }}
+                    {% endif %}
+            </div>
 
-        </div>
-        <h2>Area</h2>
-        <div>
-            {{ form.everett() }}
-            {{ form.everett.label() }}
-        </div>
-        <div>
-            {{ form.skagit_county() }}
-            {{ form.skagit_county.label() }}
-        </div>
-        <h2>Topic</h2>
-        <div>
-            {{ form.weather() }}
-            {{ form.weather.label() }}
-        </div>
-        <div>
-            {{ form.sports() }}
-            {{ form.sports.label() }}
-        </div>
-        <div>
-            {{ form.submit() }}
-        </div>
-    </fieldset>
-</form>
+                <h2>Area</h2>
+                <div>
+                    {{ form.everett() }}
+                    {{ form.everett.label() }}
+                </div>
+                <div>
+                    {{ form.skagit_county() }}
+                    {{ form.skagit_county.label() }}
+                </div>
+                <h2>Topic</h2>
+                <div>
+                    {{ form.weather() }}
+                    {{ form.weather.label() }}
+                </div>
+                <div>
+                    {{ form.sports() }}
+                    {{ form.sports.label() }}
+                </div>
+                <div>
+                    {{ form.submit() }}
+                </div>
+        </form>
+    </div>
 {% endblock content %}
