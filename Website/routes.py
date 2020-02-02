@@ -8,11 +8,11 @@ def home():
     form = RegistrationFrom()
     if form.validate_on_submit():
         print('form valid')
+
+        area_string, topic_string = prepare_sub_data(form)
         subscriber = Subscriber(email=form.email.data,
-                                everett=form.everett.data,
-                                skagit_county=form.skagit_county.data,
-                                weather=form.weather.data,
-                                sports=form.sports.data)
+                                area=area_string,
+                                topic=topic_string)
         db.session.add(subscriber)
         db.session.commit()
         flash(f'Your account has been created! You are now able to log in.',
@@ -23,7 +23,12 @@ def home():
         print('form not valid')
 
 
-    return render_template("home.html", form=form)def prepare_sub_data(form):
+    return render_template("home.html", form=form)
+
+
+
+
+def prepare_sub_data(form):
     area_string = ','.join([
         'everett'*form.everett.data,
         'skagit_county'*form.skagit_county.data])
