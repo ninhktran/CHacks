@@ -6,9 +6,14 @@ from Website.models import Subscriber
 class RegistrationFrom(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
     everett = BooleanField("Everett")
-    skagit_county = BooleanField("Skagit County")
+    lake_stevens = BooleanField('Lake Stevens')
+    snohomish_county = BooleanField('Snohomish County')
+
     weather = BooleanField("Weather")
     sports = BooleanField("Sports")
+    events = BooleanField('Events')
+    traffic = BooleanField('Traffic')
+    emergency = BooleanField('Emergency')
     submit = SubmitField('Submit')
 
     def validate_email(self, email):

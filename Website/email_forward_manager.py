@@ -2,16 +2,14 @@ from Website.sending import MessageSender
 from Website.recieveemail import MessageReciever
 from Website.find_sub import get_meta_data
 from Website.dbQuery import check_valid_email, get_interested_subs
-from Website.sortCat import get_cat_dict as gcd
-import time
 
 
 class EmailForwarder:
-    cat_dict = {'Calendar': ['holiday',
-                             'meeting',
-                             'date',
-                             'board',
-                             'commission'],
+    cat_dict = {'Events': ['holiday',
+                           'meeting',
+                           'date',
+                           'board',
+                           'commission'],
                 'Emergency': ['accident',
                               'breaking',
                               'earthquake',
@@ -49,7 +47,6 @@ class EmailForwarder:
     def __init__(self):
         while True:
             self.main()
-            # time.sleep(1)
 
     def main(self):
         MessageReciever()
