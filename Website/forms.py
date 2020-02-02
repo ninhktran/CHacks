@@ -16,3 +16,14 @@ class RegistrationFrom(FlaskForm):
         if subscriber:
             raise ValidationError(
                 'That email is taken. Please choose another one.')
+
+class UnSubscribeForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    are_you_sure = BooleanField('Are you sure you want to unsubscribe?')
+    submit = SubmitField('Submit')
+
+    def validate_email(self, email):
+        subscriber = Subscriber.query.filter_by(email=email.data).first()
+        if not subscriber:
+            raise ValidationError(
+                'That email is not in our system.')
