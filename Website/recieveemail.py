@@ -17,7 +17,7 @@ class MessageReciever:
         tmp, data = mail.search(None, 'Unseen')
         msgs = []
         msg_nums = data[0]
-        print(msg_nums)
+        # print(msg_nums)
         print(len(msg_nums)//2)
         if msg_nums:
             # num is the index of the new message
@@ -25,26 +25,25 @@ class MessageReciever:
             tmp, msg_data = mail.fetch(num, '(RFC822)')
 
             msgs = msg_data[0][1]
-
-            break
         mail.close()
         return msgs
 
     @staticmethod
     def write_msg():
         msgs = MessageReciever.get_msg()
-        # print(msgs)
-        with open("bytes_message", 'w') as f:
-            f.write("")
-
-        with open("bytes_message", 'ab') as f:
-            for m in msgs:
-                f.write(m)
-        with open("string_message",'w') as f:
-            f.write("")
-        with open('string_message', 'a') as f:
-            for m in msgs:
-                f.write(str(m.decode("ASCII")))
+        if not msgs:
+            return False
+        else:
+            print(msgs, 2)
+            with open("bytes_message", 'w') as f:
+                f.write("")
+            with open("bytes_message", 'ab') as f:
+                f.write(msgs)
+            with open("string_message",'w') as f:
+                f.write("")
+            with open('string_message', 'a') as f:
+                f.write(str(msgs.decode("ASCII")))
+            return True
 
 if __name__ == "__main__":
-    MessageReciever()
+    MessageReciever.check_for_new()
