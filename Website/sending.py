@@ -1,6 +1,7 @@
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import email as e
 
 MY_ADDRESS = 'alphatester721@gmail.com'
 PASSWORD = '@Mamamia2'
@@ -29,33 +30,19 @@ def read_message(filename):
 
 def main():
     emails = get_contacts('mycontacts2')  # read contacts
-    message = read_message('message.html')
+    email_data = read_message('message')
 
     # set up the SMTP server
     s = smtplib.SMTP(host='smtp.gmail.com', port=587)
 
     s.starttls()
     s.login(MY_ADDRESS, PASSWORD)
-
+    message = e.message_from_string(email_data)
     # For each contact, send the email:
     for email in emails:
         print(email)
-        msg = MIMEMultipart()  # create a message.html
+        s.sendmail(MY_ADDRESS, email, message.as_string())
 
-        # add in the actual person name to the message.html template
-
-
-        # setup the parameters of the message.html
-        msg['From'] = MY_ADDRESS
-        msg['To'] = email
-        msg['Subject'] = "This is TEST from your local Government Agency"
-        # msg.attach(message)
-        # add in the message.html body
-        msg.attach(MIMEText(message, 'html'))
-
-        # send the message.html via the server set up earlier.
-        s.send_message(msg)
-        del msg
 
     # Terminate the SMTP session and close the connection
     s.quit()
@@ -64,7 +51,20 @@ def main():
 if __name__ == '__main__':
     main()
 
-
+# # create a Message instance from the email data
+# message = email.message_from_string(email_data)
+#
+# # replace headers (could do other processing here)
+# message.replace_header("From", from_addr)
+# message.replace_header("To", to_addr)
+#
+# # open authenticated SMTP connection and send message with
+# # specified envelope from and to addresses
+# smtp = smtplib.SMTP(smtp_host, smtp_port)
+# smtp.starttls()
+# smtp.login(user, passwd)
+# smtp.sendmail(from_addr, to_addr, message.as_string())
+# smtp.quit()
 
 
 

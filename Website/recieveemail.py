@@ -13,7 +13,7 @@ def get_msg():
     for num in data[0].split():
         tmp, data = mail.fetch(num, '(RFC822)')
         # print(data)
-        msgs.append(data[0][1].decode('utf-8'))
+        msgs.append(data[0][1].decode('ASCII'))
         # pprint.pprint(data[0][1].decode('ASCII'))
         # pprint.pprint(data[0][1])
     mail.close()
@@ -65,5 +65,5 @@ if __name__ == "__main__":
 #                 while msg.is_multipart():
 #                     msg = msg.get_payload(0)
 #                 content = msg.get_payload(decode=True)
-#                 with open("message.html", "w") as f:
+#                 with open("message", "w") as f:
 #                     f.write(content)
