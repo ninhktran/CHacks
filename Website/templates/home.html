@@ -7,8 +7,18 @@
     <fieldset class="form-group">
         <legend class="border-bottom mb-4">Subcribe</legend>
         <div class="form-group">
-            {{ form.email.label() }}
-            {{ form.email() }}
+        {{ form.email.label() }}
+        {% if form.email.errors %}
+          {{ form.email()}}
+        <div class="invalid-feedback">
+          {% for error in form.email.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %}
+          {{ form.email() }}
+        {% endif %}
+      </div>
 
         </div>
         <h2>Area</h2>
