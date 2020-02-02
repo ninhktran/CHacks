@@ -1,7 +1,6 @@
 import imaplib
 import base64
 import os
-import email
 
 email_user = 'alphatester721@gmail.com'
 email_pass = '@Mamamia2'
