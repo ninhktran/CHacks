@@ -42,8 +42,12 @@ def unsub():
 def prepare_sub_data(form):
     area_string = ','.join([
         'everett'*form.everett.data,
-        'skagit_county'*form.skagit_county.data])
+        'lake stevens'*form.lake_stevens.data,
+        'snohomish county'*form.snohomish_county.data])
     topic_string = ','.join([
         'weather'*form.weather.data,
-        'sports'*form.sports.data])
+        'sports'*form.sports.data,
+        'events'*form.sports.data,
+        'traffic'*form.traffic.data,
+        'emergency'*form.sports.data])
     return area_string, topic_string
