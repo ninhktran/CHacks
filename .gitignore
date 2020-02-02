@@ -130,3 +130,6 @@ dmypy.json
 
 # pycharm specific
 .idea
+
+# db
+site.db
