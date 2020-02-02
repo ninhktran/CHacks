@@ -1,0 +1,1213 @@
+Delivered-To: alphatester721@gmail.com
+Received: by 2002:a05:600c:2257:0:0:0:0 with SMTP id a23csp2481566wmm;
+        Sat, 1 Feb 2020 20:24:53 -0800 (PST)
+X-Google-Smtp-Source: APXvYqzFeVJrkVoC1cOW/rDmDokkaUQI2hLxpGAPirU6ufhBP8NAcBTzbDo+dfPQoPeECxuCBd6r
+X-Received: by 2002:aca:b60a:: with SMTP id g10mr10711831oif.102.1580617493448;
+        Sat, 01 Feb 2020 20:24:53 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1580617493; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=slwSjTYgpNyNICAhVrp6U485OJha54mTVpWavEF7ZAjALea+DrOm4/Hrf/77VMrmfM
+         JTiPRSSSImGmNg2iiA7KFebQ062bUZIM2mQMaJvextiJocDSHTxOklhLTbiV1hShKbxn
+         nAIZ7MTVisUzR4AcDCAcgrLE5Pn6RsaBLPzUekNcp8bWd5DIUwXIagMNWcrVSzt0XtBn
+         3MpJdNl/FrrreNwf2CjK9Kz+BBxOPO72coC5MQHD04R2TUp4Il08r+oylLsJ7t4jEXZ+
+         qPJ8yr196fQneM+q+/EkTx+o8cAKxXkwR2jRsaODtRA7YY7/AC7qMIW5nBhYuThN6PiF
+         jAxQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from:dkim-signature;
+        bh=FvHiIkJlwVg3JxMBrz9UTHoIGa+H+d2Q0yMaUowq/9o=;
+        b=abiL9umty4L7kawPok9cDVUeWK5lhebMhYDdEjT41BqECyomgsjDdPKhC/JYl46ODe
+         mbVlVl6wgHCeryrngId4oXox+eDqVxMX2YVguszIoG3+PVJzxdaDKgG/1YetRrl/koOU
+         cYGr8oo+mj1KKrwnaoHWh//wbm7YI+b3P4ruSgxgugElhY6d3vJzFqC+MnnbVIJCCKzf
+         2hGW5Id9RJ1adEi5nCo+xeGH176tbvFhgWbUSwatJ1Vet0EV7i87kwson8NRVWufuzoS
+         0lSAVDt109+HL8qyUCJFQ4pFTkXxHafbkafczNqiQUb86T2NSOrQwXoZhrURtZanQtIh
+         asKw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@seattlecolleges.edu header.s=selector1 header.b=YsX4kEtk;
+       arc=pass (i=1 spf=pass spfdomain=seattlecolleges.edu dkim=pass dkdomain=seattlecolleges.edu dmarc=pass fromdomain=seattlecolleges.edu);
+       spf=pass (google.com: domain of anthony.asp@seattlecolleges.edu designates 40.107.244.93 as permitted sender) smtp.mailfrom=Anthony.Asp@seattlecolleges.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=seattlecolleges.edu
+Return-Path: <Anthony.Asp@seattlecolleges.edu>
+Received: from NAM12-MW2-obe.outbound.protection.outlook.com (mail-mw2nam12on2093.outbound.protection.outlook.com. [40.107.244.93])
+        by mx.google.com with ESMTPS id k4si7701841otp.186.2020.02.01.20.24.52
+        for <alphatester721@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 01 Feb 2020 20:24:53 -0800 (PST)
+Received-SPF: pass (google.com: domain of anthony.asp@seattlecolleges.edu designates 40.107.244.93 as permitted sender) client-ip=40.107.244.93;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@seattlecolleges.edu header.s=selector1 header.b=YsX4kEtk;
+       arc=pass (i=1 spf=pass spfdomain=seattlecolleges.edu dkim=pass dkdomain=seattlecolleges.edu dmarc=pass fromdomain=seattlecolleges.edu);
+       spf=pass (google.com: domain of anthony.asp@seattlecolleges.edu designates 40.107.244.93 as permitted sender) smtp.mailfrom=Anthony.Asp@seattlecolleges.edu;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=seattlecolleges.edu
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=YaSV8BpisaZG6Ff3YbKwiUOXIIZp9GVdu+4ofCQ3iO5V453EEnTTjmNpL8J3suqeWvFG3oXLC/8HEYkbAgeS0WA/TTLFyx+V+MskpNmgvghl8Ii8XVgVIXSeXezBozqD7CHt7L0+oHqBUpCet/d1FSazC9I1bXAX7AoF1X7LiOjyLbOrAEwiqqUVqyMVT8hduXqUZwTveZNzRrn0a4dfuV5vZRUjZa8c9in3WycfvsfKC8zwhExc7uWlbHHwMsxBoPByZm/5A6Lygd/hmTEAPx2Zq4gjhz5mDeKmp+q5uPOZcs0IV23runAf4MYQL5vrHngf7IT1FmagQ+Lp0AXnTQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FvHiIkJlwVg3JxMBrz9UTHoIGa+H+d2Q0yMaUowq/9o=;
+ b=j12gx3yaCMclzjAPuT8+KLdP15XKmESQIszJrnHCokfFQuwlXEP7QPWIigu+AD67+GEfSDQvGzZ8aZWoKjlmPrA/uwVvIclbmv3BYlQ7ETPcinNBHVfZrrbAmW/5UEbWMClbqU8c2jjvV8kg1ZStRtt3PAXysn9ECXQEaB0y5V2SCwOZUWKE0JN1S5TWk1H6oalpnXEqQNyS16N86QBUkNb6U7Xad4Z104n06wP5oeCbwz/LvyO8IEqiZh/Whh14RFGJkcTRfAZOT9mBB9vTASNWDoJk+e4l3kRRvMcSnBbXZFqOQFvu3C2pqvF9vMMGWXp1cMqtQIbf8KAIaG6/kg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=seattlecolleges.edu; dmarc=pass action=none
+ header.from=seattlecolleges.edu; dkim=pass header.d=seattlecolleges.edu;
+ arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=seattlecolleges.edu;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=FvHiIkJlwVg3JxMBrz9UTHoIGa+H+d2Q0yMaUowq/9o=;
+ b=YsX4kEtktc8WoUT9Ey3VypmRweQeDGrnxOo4zfM+R4W06qH+uDcor6R17KNe/xcJp7DAQLVKQWORtorWXos5KJxrfy1M6O/YODZH0ub5P4bxFMHt+1I7wkdTNv1rI35oOoiK5tapQvuQ/+IjW8W6hovKJj7fcNxE+Krd7dIag8o=
+Received: from CY4PR0701MB3700.namprd07.prod.outlook.com (52.132.102.27) by
+ CY4PR0701MB3747.namprd07.prod.outlook.com (52.132.97.167) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2686.29; Sun, 2 Feb 2020 04:24:50 +0000
+Received: from CY4PR0701MB3700.namprd07.prod.outlook.com
+ ([fe80::b446:5eef:6c3c:a74d]) by CY4PR0701MB3700.namprd07.prod.outlook.com
+ ([fe80::b446:5eef:6c3c:a74d%6]) with mapi id 15.20.2686.030; Sun, 2 Feb 2020
+ 04:24:49 +0000
+From: "Asp, Anthony" <Anthony.Asp@Seattlecolleges.edu>
+To: "alphatester721@gmail.com" <alphatester721@gmail.com>
+Subject:
+ =?Windows-1252?Q?Millions_of_dollars_in_Earned_Income_Tax_Credits_go_uncl?=
+ =?Windows-1252?Q?aimed_each_year_=96_is_some_of_it_yours=3F?=
+Thread-Topic:
+ =?Windows-1252?Q?Millions_of_dollars_in_Earned_Income_Tax_Credits_go_uncl?=
+ =?Windows-1252?Q?aimed_each_year_=96_is_some_of_it_yours=3F?=
+Thread-Index: AQHV2YCNMD3+UEbcUUSC4LXTXldYW6gHTkzf
+Date: Sun, 2 Feb 2020 04:24:48 +0000
+Message-ID:
+ <CY4PR0701MB37003794A06DABEEE3C8ED4BE1010@CY4PR0701MB3700.namprd07.prod.outlook.com>
+References:
+ <16826035.9809@public.govdelivery.com>,<CADd7gf128ZTJDg+DwWrQcjQNfig+6RFN-XnN0aXVZAOw5PRuVQ@mail.gmail.com>
+In-Reply-To:
+ <CADd7gf128ZTJDg+DwWrQcjQNfig+6RFN-XnN0aXVZAOw5PRuVQ@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Anthony.Asp@Seattlecolleges.edu; 
+x-originating-ip: [173.229.63.228]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: a489aa31-7187-4f0c-bf36-08d7a797d7c3
+x-ms-traffictypediagnostic: CY4PR0701MB3747:
+x-microsoft-antispam-prvs:
+ <CY4PR0701MB37477C8E1D84D617CC202E84E1010@CY4PR0701MB3747.namprd07.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
+x-forefront-prvs: 0301360BF5
+x-forefront-antispam-report:
+ SFV:NSPM;SFS:(10019020)(4636009)(376002)(366004)(136003)(396003)(39850400004)(346002)(199004)(189003)(75432002)(76236002)(786003)(7696005)(53546011)(6506007)(26005)(86362001)(71200400001)(316002)(6916009)(52536014)(66556008)(478600001)(33656002)(81156014)(8936002)(81166006)(2906002)(66476007)(64756008)(66946007)(55016002)(91956017)(186003)(76116006)(9686003)(66446008)(966005)(19627405001)(5660300002)(15974865002)(579004);DIR:OUT;SFP:1102;SCL:1;SRVR:CY4PR0701MB3747;H:CY4PR0701MB3700.namprd07.prod.outlook.com;FPR:;SPF:None;LANG:en;PTR:InfoNoRecords;A:1;MX:1;
+received-spf: None (protection.outlook.com: Seattlecolleges.edu does not
+ designate permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ quF1ISayNdcxkQwupN2GqdGuR314UihqWUUbazG8NirAclIZ9dSrv5gzHuCCCiaJmWH+CwTI8u8RaSEeQ9Hlv5Hk5CaYAMyxtSse54DsXjS/F1QvgDKcIgUgiBpiIVY8LmieIYFYRTznltO4S2eLVH3jdmAr5DBeF4HFcdrf8AJCL94wKMTQbmyq3lDXdJx8w4DBpxi0iXM9hmQNkMSFH5ShPpO0wtCAyWf/aXN/cb61vvsTlFA4ElD0sL1fuyr2KVQC9TtCOkXIhmmmBrTNMMupzTxBKYO//83FDMA/2w9dhZUJsgM8j2Rvq1L7Cp9X9ULhF5jyn0YK0A404FMBTKY3M7AsoFMRcrZxqFdbD2nBdkZuAScdHCvUqzv4IpZj8kMybTgjBQK4KAJDSNmXCzI7lovoe8jfZRpdn2Owd74zJJE3PPwjvbCZhNziZsR4ulslYh/Q/hHb3K4PIOS7HxQMDSfXjEqLaG70zkj1H1irRXz0VmDn0gDNab9/HQa5lnCX7j2A9wRTbFM+l83YNw==
+x-ms-exchange-antispam-messagedata:
+ tZyNS3Uws8YqAIdsRSSQ2uraES+lkqBhVT3a9Ue7E8Hs+LYnoxU32v/AmU6LOt2vsiTMdWN/ZjC2Hd6j64rC9a5eNhdH5fOXWvApv3qqlbe9tcOCP/2Fm4noW723Hn+3vONhu8wB+EYJZZi+MmkMYw==
+x-ms-exchange-transport-forked: True
+Content-Type: multipart/alternative;
+	boundary="_000_CY4PR0701MB37003794A06DABEEE3C8ED4BE1010CY4PR0701MB3700_"
+MIME-Version: 1.0
+X-OriginatorOrg: seattlecolleges.edu
+X-MS-Exchange-CrossTenant-Network-Message-Id: a489aa31-7187-4f0c-bf36-08d7a797d7c3
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Feb 2020 04:24:49.5796
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 02d8ff38-d711-4e31-a915-6cb5cff788df
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: w1oHvSY+XrIE1LQzrzleYZ7USQK1V0+DHOHA+ciQFCkIEwpYNkFiO7j5bQbdEvkocfERLmUqIuQNrl1vemAz7UW0Z1WD8LPzTeb0d+bbeN8=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR0701MB3747
+
+--_000_CY4PR0701MB37003794A06DABEEE3C8ED4BE1010CY4PR0701MB3700_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+
+
+________________________________
+From: Alpha Test <alphatester721@gmail.com>
+Sent: Saturday, February 1, 2020 8:23 PM
+To: Asp, Anthony <Anthony.Asp@Seattlecolleges.edu>
+Subject: Fwd: Millions of dollars in Earned Income Tax Credits go unclaimed=
+ each year =96 is some of it yours?
+
+
+
+---------- Forwarded message ---------
+From: Washington State Department of Commerce <alphatester721@gmail.com<mai=
+lto:alphatester721@gmail.com>>
+Date: Sat, Feb 1, 2020 at 8:17 PM
+Subject: Millions of dollars in Earned Income Tax Credits go unclaimed each=
+ year =96 is some of it yours?
+To:
+
+
+The Earned Income Tax Credit (EITC) is an important benefit for working peo=
+ple with low to moderate incomes.
+
+Having trouble viewing this email? View it online<https://nam04.safelinks.p=
+rotection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1Ni=
+J9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDAsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lk=
+IjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL2NvbnRlbnQuZ292ZGVsaXZlcnk=
+uY29tL2FjY291bnRzL1dBRE9DL2J1bGxldGlucy8yNzhhOWYzIn0.G4VDcnlv1ODO5PdDhFOkXR=
+0_eSlmPCcOVOtgrxO1Lok%2Fbr%2F74469033372-l&data=3D02%7C01%7C%7C9026f6ea8aff=
+4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C637162142=
+235436495&sdata=3DfR5egpUfvlVAyqNCQh5JygE0OV9PHWIuMECbPqIt6RY%3D&reserved=
+=3D0>
+
+[Commerce Logo]
+
+
+
+News Release
+FOR IMMEDIATE RELEASE
+Jan. 29, 2020
+Millions of dollars in Earned Income Tax Credits go unclaimed each year =96=
+ is some of it yours?
+The Earned Income Tax Credit (EITC) is an important benefit for working peo=
+ple with low to moderate incomes, but you must file a federal tax return to=
+ get it, even if you owe no income tax.
+
+OLYMPIA, WA =96 The Washington State Department of Commerce reminds anyone =
+earning up to $55,952 that they may be eligible to receive the federal Earn=
+ed Income Tax Credit (EITC). To take advantage of this benefit, you must fi=
+le a federal income tax return with the Internal Revenue Service <https://n=
+am04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2Fey=
+JhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDEsInVyaSI6ImJwMjpjbGljayIs=
+ImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5pcnM=
+uZ292L2NyZWRpdHMtZGVkdWN0aW9ucy9pbmRpdmlkdWFscy9lYXJuZWQtaW5jb21lLXRheC1jcm=
+VkaXQifQ.s7FpUPbdyQD2ZvTGE0H4_ej1Os9Vih_Ek1RICvo3HmI%2Fbr%2F74469033372-l&d=
+ata=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156=
+cb5cff788df%7C0%7C1%7C637162142235446487&sdata=3DtByCZq0diiq5%2BEE32QZ9WD8j=
+QENZH84bV7RWPFZDkQQ%3D&reserved=3D0> (IRS) even if you owe no income tax or=
+ are not otherwise required to file a tax return. Last year the average EIT=
+C was $2,205.
+
+Many people are eligible for this tax benefit, but it often goes unclaimed.=
+ The IRS estimates 20% of those eligible either do not claim the benefit on=
+ their taxes or do not file a tax return at all. Seniors, individuals with =
+low incomes, and non-English speaking taxpayers account for much of the unc=
+laimed credits because they don=92t realize they are eligible. The credit r=
+educes the amount of taxes owed and results in a lump sum refund payment fo=
+r most people who are eligible to claim it.
+
+Gov. Jay Inslee proclaimed Jan. 31, 2020 as =93Earned Income Tax Credit Awa=
+reness Day=94 in the state of Washington as part of a nationwide effort to =
+spread the word about this under-used tax credit and provide information an=
+d resources to claim it. Read the Governor=92s proclamation.<https://nam04.=
+safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGc=
+iOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDIsInVyaSI6ImJwMjpjbGljayIsImJ1b=
+GxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5jb21tZXJj=
+ZS53YS5nb3Yvd3AtY29udGVudC91cGxvYWRzLzIwMjAvMDEvR292LTIwMjAtRUlUQy1Qcm9jbGF=
+tYXRpb24ucGRmIn0.uOArpNfA8Ai_d9RGxsSoolb8pKQzoVjt5lEEtWIS7R0%2Fbr%2F7446903=
+3372-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114=
+e31a9156cb5cff788df%7C0%7C1%7C637162142235446487&sdata=3DwqCbKB%2F9MEf17cPl=
+SShacw9B0QTk57PodZuhKFvVK%2Bc%3D&reserved=3D0>
+
+=93Together, the Earned Income Tax Credit and low-income Child Tax Credit (=
+CTC) are among the strongest tools available to help move families out of p=
+overty and promote work," Gov. Jay Inslee said. =93We want to make sure tha=
+t all Washingtonians are aware of this opportunity, as one in five eligible=
+ taxpayers do not claim or receive the credit they are due.=94
+
+In 2019, 388,000 Washington residents applied for the credit, claiming $856=
+ million in refunds. This year, individuals can receive a tax refund of up =
+to $6,557 if they meet eligibility requirements.
+
+=93The earned income tax credit is a triple win for families, businesses, a=
+nd communities,=94 said Lisa Brown, director of the Department of Commerce.=
+ =93EITC dollars strengthen family finances and also strengthen communities=
+ when those dollars flow into the local economy.=94
+
+Free tax preparation, other resources available
+
+The Department of Commerce and Department of Social and Health Services par=
+tner with many local agencies and nonprofit organizations across the state =
+to raise awareness about the Earned Income Tax Credit and free tax preparat=
+ion services.
+
+To learn more, visit https://wa211.org/<https://nam04.safelinks.protection.=
+outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWx=
+sZXRpbl9saW5rX2lkIjoxMDMsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMD=
+AxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3dhMjExLm9yZy8ifQ.nypE1khygZn6xcltCj=
+99Pvt7W99ehlXcb6xhUcC7yUA%2Fbr%2F74469033372-l&data=3D02%7C01%7C%7C9026f6ea=
+8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C63716=
+2142235456483&sdata=3DHsqJNtIKOi4CB5Qxsk9b2PGRDx6ywzQT%2FINe5DyNtrI%3D&rese=
+rved=3D0> or call the Washington Information Line by dialing 2-1-1 and ask =
+for free tax preparation services. The IRS has a one-stop =93EITC Central=
+=94 website with information in multiple languages and alternative formats =
+at www.eitc.irs.gov<https://nam04.safelinks.protection.outlook.com/?url=3Dh=
+ttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjo=
+xMDQsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLC=
+J1cmwiOiJodHRwczovL3d3dy5laXRjLmlycy5nb3YifQ.CM3lzXkZoDxXgy28DkT5h6eICg-QN-=
+dnvFXljwMiwmI%2Fbr%2F74469033372-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e5=
+08d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C63716214223545648=
+3&sdata=3DS0WCmmbyVtcGzmm%2FoFeL4G10WriGHo7op%2FcBuO2hZgI%3D&reserved=3D0>.
+
+Media center<https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A=
+%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDUsIn=
+VyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiO=
+iJodHRwczovL3d3dy5jb21tZXJjZS53YS5nb3YvbWVkaWEtY2VudGVyLyJ9.1M2NikJKuwRR6XK=
+5MRgqLG4Th6LM_CzxwpXUVra3VR0%2Fbr%2F74469033372-l&data=3D02%7C01%7C%7C9026f=
+6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C63=
+7162142235466475&sdata=3DyNuyCDM7LwbDO8PFm1nW30%2F44MXvm63HjGmqbmTRDik%3D&r=
+eserved=3D0>
+[https://content.govdelivery.com/attachments/fancy_images/WADOC/2019/04/253=
+7294/line2_original.jpg]
+Contact
+
+Penny Thomas<mailto:penny.thomas@commerce.wa.gov>
+
+Commerce Communications, (206) 256-6106 | Mobile/text: (360) 704-9489
+
+[https://content.govdelivery.com/attachments/fancy_images/WADOC/2020/01/308=
+0083/emailfooter-stripe_original.png]
+[https://content.govdelivery.com/attachments/fancy_images/WADOC/2020/01/308=
+0109/logo-white-250x90_original.png]
+
+Stay connected
+
+[subscribe]<https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%=
+2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDYsInV=
+yaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOi=
+JodHRwczovL3B1YmxpYy5nb3ZkZWxpdmVyeS5jb20vYWNjb3VudHMvV0FET0Mvc3Vic2NyaWJlc=
+i9uZXcifQ.2tbV4IK86wbBN3vThABskQ3ZFossOmBMrcgMaw0jJYo%2Fbr%2F74469033372-l&=
+data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a915=
+6cb5cff788df%7C0%7C1%7C637162142235466475&sdata=3DSb%2BeZa6kXBI4EIYCdb0O10d=
+fJhjCIMgLDfILGps4BeU%3D&reserved=3D0>[twitter]<https://nam04.safelinks.prot=
+ection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.=
+eyJidWxsZXRpbl9saW5rX2lkIjoxMDcsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjo=
+iMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3R3aXR0ZXIuY29tL3dhc3RhdGVjb2=
+1tZXJjZSJ9.m_Bu7LflQJbFPlQ2t754_oT_kwoYZlqAxVmydAZwupc%2Fbr%2F74469033372-l=
+&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a91=
+56cb5cff788df%7C0%7C1%7C637162142235476469&sdata=3D5UsUziI2cZDO9hP9LJ7sxOs8=
+rhGAhkvccy%2Bg8X3pon0%3D&reserved=3D0>[facebook]<https://nam04.safelinks.pr=
+otection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ=
+9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDgsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkI=
+joiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5mYWNlYm9vay5jb20vV0FT=
+dGF0ZUNvbW1lcmNlLyJ9.-pL7lUu8eyKDd774AgpImSwgPHyAja6_g65mGJ1iL5w%2Fbr%2F744=
+69033372-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d=
+7114e31a9156cb5cff788df%7C0%7C0%7C637162142235476469&sdata=3DL31liqi4whyl5a=
+a%2FWDnO5bJSOr8bdmA92KVdhWhr11k%3D&reserved=3D0>
+About Commerce
+
+Commerce works with local governments, businesses, community-based organiza=
+tions and tribes to strengthen communities. The department=92s diverse port=
+folio of more than 100 programs and effective public and private partnershi=
+ps promote sustainable community and economic development to help all Washi=
+ngtonians thrive. For more information, visit http://www.commerce.wa.gov<ht=
+tps://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2=
+Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDksInVyaSI6ImJwMjpjb=
+GljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwOi8vd3d3=
+LmNvbW1lcmNlLndhLmdvdiJ9.thg-EIdL4JluCjdXEuX3VKAETm2690UfHDAsYQVuThs%2Fbr%2=
+F74469033372-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8f=
+f38d7114e31a9156cb5cff788df%7C0%7C0%7C637162142235486465&sdata=3DeUrbSE4%2F=
+5OXy%2FkrPyQzCqhe8HWQnP4xVGA3%2BJpu%2BUJ8%3D&reserved=3D0>. For information=
+ on locating or expanding a business in Washington, visit choosewashingtons=
+tate.com<https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%=
+2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTAsInVyaS=
+I6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJod=
+HRwOi8vY2hvb3Nld2FzaGluZ3RvbnN0YXRlLmNvbS8ifQ.d2x7LEQPBwcSbq3hUkv99NwTIaORS=
+ZMaDRs4rppbTP8%2Fbr%2F74469033372-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e=
+508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C6371621422354864=
+65&sdata=3DJrt6rTZmyubfa581ffIw2U8S5262ouIEvxN8ralj9iA%3D&reserved=3D0>.
+
+Update your subscriptions, modify your password or email address, or stop s=
+ubscriptions at any time on your Subscriber Preferences Page<https://nam04.=
+safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGc=
+iOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTEsInVyaSI6ImJwMjpjbGljayIsImJ1b=
+GxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3B1YmxpYy5nb3Zk=
+ZWxpdmVyeS5jb20vYWNjb3VudHMvV0FET0Mvc3Vic2NyaWJlci9uZXc_cHJlZmVyZW5jZXM9dHJ=
+1ZSJ9.qOakEoNVkNuYFTAtJ9BTY6nhXjyrZ8hwvyFgYIEXE2s%2Fbr%2F74469033372-l&data=
+=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5=
+cff788df%7C0%7C0%7C637162142235496459&sdata=3DSi%2FHEiAjxS6e4hvu8j7F0Xi4UJw=
+YajNlDg7aIHgVzfo%3D&reserved=3D0>. You will need to use your email address =
+to log in. If you have questions or problems with the subscription service,=
+ please visit subscriberhelp.govdelivery.com<https://nam04.safelinks.protec=
+tion.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.ey=
+JidWxsZXRpbl9saW5rX2lkIjoxMTIsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiM=
+jAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3N1YnNjcmliZXJoZWxwLmdvdmRlbGl2=
+ZXJ5LmNvbS8ifQ.yVC76TIueAnG9L_AB3R0rKGW4Z852StRsV4i8FhKrgM%2Fbr%2F744690333=
+72-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e3=
+1a9156cb5cff788df%7C0%7C0%7C637162142235496459&sdata=3D0naowFpshTCO9X8oMspB=
+Py46DGdAYPScMI6qdRvpiJM%3D&reserved=3D0>.
+
+This service is provided to you at no charge by Washington Department of Co=
+mmerce<https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2F=
+lnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTMsInVyaSI6=
+ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHR=
+wczovL3d3dy5jb21tZXJjZS53YS5nb3YvIn0.nBZCTLi0akBc96XmYtbJA2XkdGwootVDzqflo5=
+pvr9E%2Fbr%2F74469033372-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797=
+af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C637162142235506452&sdata=
+=3DG0ifD759NOp0ldmh4UssXjY4pfsbgSk84WpQj%2FPpGoQ%3D&reserved=3D0>.
+
+Subscribe<https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F=
+%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTQsInVya=
+SI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJo=
+dHRwczovL3B1YmxpYy5nb3ZkZWxpdmVyeS5jb20vYWNjb3VudHMvV0FET0Mvc3Vic2NyaWJlci9=
+uZXc_cG9wPXQifQ.5Rk1NQurcS0Jnatb81uwTnifZ5Q6RAwN57m-3mu4deM%2Fbr%2F74469033=
+372-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e=
+31a9156cb5cff788df%7C0%7C0%7C637162142235506452&sdata=3DlxW2KVMheD24DSZiuLS=
+ktRR4lhWLhlzdSpIJHn%2BsAE4%3D&reserved=3D0> | Manage Preferences<https://na=
+m04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJ=
+hbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTUsInVyaSI6ImJwMjpjbGljayIsI=
+mJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwOi8vcHVibGljLmdv=
+dmRlbGl2ZXJ5LmNvbS9hY2NvdW50cy9XQURPQy9zdWJzY3JpYmVycy9uZXc_cHJlZmVyZW5jZXM=
+9dHJ1ZSJ9.I9WrdhlSIAasJclDdj7zIjgTHE_BVEkXj4vzW10FWiw%2Fbr%2F74469033372-l&=
+data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a915=
+6cb5cff788df%7C0%7C0%7C637162142235516447&sdata=3DrLjcpTRG4d7hpUXHKFrG73%2F=
+%2BxzJytclGWE4w7kMI21s%3D&reserved=3D0> | Unsubscribe All<https://nam04.saf=
+elinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOi=
+JIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTYsInF1ZXJ5X3BhcmFtcyI6WyJ2ZXJpZmlj=
+YXRpb24iLCJkZXN0aW5hdGlvbiJdLCJ1cmkiOiJicDI6Y2xpY2siLCJidWxsZXRpbl9pZCI6IjI=
+wMjAwMTI5LjE2MjgxNDcxIiwidXJsIjoiaHR0cHM6Ly9wdWJsaWMuZ292ZGVsaXZlcnkuY29tL2=
+FjY291bnRzL1dBRE9DL3N1YnNjcmliZXIvb25lX2NsaWNrX3Vuc3Vic2NyaWJlIn0.3QFODrLY6=
+EoIVjMllq0Xo04k3nuyhwpsBvVDA8BL700%2Fbr%2F74469033372-l%3Fverification%3D5.=
+2a868b224562ff10be54d80caec76eeb%26destination%3Dffrancisc92%2540gmail.com&=
+data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a915=
+6cb5cff788df%7C0%7C0%7C637162142235526441&sdata=3DovZ0LYk1ihLsVPlUVRi6pTEYs=
+VIePB5XZf6PCzh2QJ8%3D&reserved=3D0> | Help<https://nam04.safelinks.protecti=
+on.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJi=
+dWxsZXRpbl9saW5rX2lkIjoxMTcsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjA=
+yMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3N1YnNjcmliZXJoZWxwLmdvdmRlbGl2ZX=
+J5LmNvbS8ifQ.monvoIjcqFvh_2Eoa2BdLmeDW6Y4OSwD0w1FAEvisl8%2Fbr%2F74469033372=
+-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a=
+9156cb5cff788df%7C0%7C0%7C637162142235526441&sdata=3DP1ggQweaTPfk8BBrSJfj7g=
+UogKgdlnvPo8mmg%2Fs57PA%3D&reserved=3D0> | Contact us<https://nam04.safelin=
+ks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUz=
+I1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTgsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGlu=
+X2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5jb21tZXJjZS53YS5=
+nb3YvY29udGFjdC11cy8ifQ.f9yMCCiDkimWCr6Ext_xB34UtUujK_yp-aRM86m2-5A%2Fbr%2F=
+74469033372-l&data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff=
+38d7114e31a9156cb5cff788df%7C0%7C0%7C637162142235536435&sdata=3DB9TBoFp8PpP=
+H0m8mC%2BLSaFMojLgijMdI4wd5y7qTDnw%3D&reserved=3D0>
+
+[https://content.govdelivery.com/attachments/fancy_images/WADOC/2019/04/253=
+7294/line2_original.jpg]
+[https://content.govdelivery.com/attachments/fancy_images/WADOC/2020/01/308=
+2242/wa-counts-logo-final-white-160x140px_original.png]      Learn more abo=
+ut what you can do to promote participation in the 2020 Census where you li=
+ve.<https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnk=
+s.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTksInVyaSI6ImJ=
+wMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwcz=
+ovL3d3dy5vZm0ud2EuZ292L3dhc2hpbmd0b24tZGF0YS1yZXNlYXJjaC9wb3B1bGF0aW9uLWRlb=
+W9ncmFwaGljcy9kZWNlbm5pYWwtY2Vuc3VzLzIwMjAtY2Vuc3VzLWV2ZXJ5b25lLWNvdW50cyJ9=
+.t6AxKlSB7-Ka85MpsqIHKW08oA-aWkqJlS0k2p3lzIM%2Fbr%2F74469033372-l&data=3D02=
+%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff78=
+8df%7C0%7C0%7C637162142235536435&sdata=3DY%2B5j%2B5wYQPoTOqyuryCYmO9VVz1bZM=
+MNw2Eq%2FZk%2FnHs%3D&reserved=3D0>
+
+
+
+This email was sent to using GovDelivery Communications Cloud on behalf of:=
+ Washington State Department of Commerce =B7 1011 Plum Street SE, P.O. Box =
+42525 =B7 Olympia, WA 98504-2525
+[GovDelivery logo]<https://nam04.safelinks.protection.outlook.com/?url=3Dht=
+tps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjox=
+MjAsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ=
+1cmwiOiJodHRwczovL3N1YnNjcmliZXJoZWxwLmdyYW5pY3VzLmNvbS8ifQ.Zk2eBiS9amxdqPL=
+Tf9u0kYCBRp59_gkAhMMJ-VBQOWI%2Fbr%2F74469033372-l&data=3D02%7C01%7C%7C9026f=
+6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C63=
+7162142235546429&sdata=3DygwXqhF7vYWpBzh2T67EWNZ%2B%2Fa1vGg8nwT9NUu1gVXk%3D=
+&reserved=3D0>
+
+
+CAUTION: This email originated outside of the Seattle Colleges=92 email sys=
+tem. Do not click links or open attachments unless you recognize the sender=
+ and know the content is safe. Questions? Contact IT Services at x6333 (Cen=
+tral), x3630 (North), x5844 (South) or email ITHelp@seattlecolleges.edu.
+
+
+--_000_CY4PR0701MB37003794A06DABEEE3C8ED4BE1010CY4PR0701MB3700_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div>
+<div style=3D"font-family: Calibri, Arial, Helvetica, sans-serif; font-size=
+: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"appendonsend"></div>
+<hr tabindex=3D"-1" style=3D"display:inline-block; width:98%">
+<div id=3D"divRplyFwdMsg" dir=3D"ltr"><font style=3D"font-size:11pt" face=
+=3D"Calibri, sans-serif" color=3D"#000000"><b>From:</b> Alpha Test &lt;alph=
+atester721@gmail.com&gt;<br>
+<b>Sent:</b> Saturday, February 1, 2020 8:23 PM<br>
+<b>To:</b> Asp, Anthony &lt;Anthony.Asp@Seattlecolleges.edu&gt;<br>
+<b>Subject:</b> Fwd: Millions of dollars in Earned Income Tax Credits go un=
+claimed each year =96 is some of it yours?</font>
+<div>&nbsp;</div>
+</div>
+<div>
+<div dir=3D"ltr"><br>
+<br>
+<div class=3D"gmail_quote">
+<div dir=3D"ltr" class=3D"gmail_attr">---------- Forwarded message --------=
+-<br>
+From: <strong class=3D"gmail_sendername" dir=3D"auto">Washington State Depa=
+rtment of Commerce</strong>
+<span dir=3D"auto">&lt;<a href=3D"mailto:alphatester721@gmail.com">alphates=
+ter721@gmail.com</a>&gt;</span><br>
+Date: Sat, Feb 1, 2020 at 8:17 PM<br>
+Subject: Millions of dollars in Earned Income Tax Credits go unclaimed each=
+ year =96 is some of it yours?<br>
+To: <br>
+</div>
+<br>
+<br>
+<u></u>
+<div style=3D"line-height:1.4; margin:0; padding:0; width:100%!important">
+<table style=3D"width:100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" bgcolor=3D"#ffffff">
+<tbody>
+<tr bgcolor=3D"#ffffff">
+<td style=3D"background-color:#ffffff; padding:0px; font-size:1px; font-fam=
+ily:'Helvetica Neue',Helvetica,Arial,sans-serif; color:#ffffff" valign=3D"t=
+op" align=3D"center">
+The Earned Income Tax Credit (EITC) is an important benefit for working peo=
+ple with low to moderate incomes.
+</td>
+</tr>
+</tbody>
+</table>
+<a id=3D"m_-7154407533883729081gd_top" name=3D"m_-7154407533883729081_gd_to=
+p"></a>
+<table class=3D"m_-7154407533883729081gd_tbl_wrap" width=3D"100%" cellspaci=
+ng=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"margin:0; padding:0; width:100%!important">
+<table class=3D"m_-7154407533883729081main-table" id=3D"m_-7154407533883729=
+081yahoo" style=3D"width:600px; border-collapse:collapse" width=3D"600" cel=
+lspacing=3D"0" cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td class=3D"m_-7154407533883729081mobile-padding" style=3D"padding:0px 0" =
+width=3D"100%">
+<table class=3D"m_-7154407533883729081main-table" style=3D"background-color=
+:#ffffff; border-collapse:collapse" width=3D"100%" cellspacing=3D"0" cellpa=
+dding=3D"0" bgcolor=3D"#FFFFFF" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"background-color:#ffffff; padding:0 0 1px" width=3D"100%" bgco=
+lor=3D"#FFFFFF">
+<table style=3D"border-collapse:collapse" width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td id=3D"m_-7154407533883729081view-in-browser" style=3D"padding:0px 0px 2=
+0px 30px" width=3D"100%">
+<p style=3D"line-height:1.1; margin-top:0; margin-bottom:0; color:#555555; =
+font-family:helvetica; font-size:11px; text-align:right" align=3D"right">
+Having trouble viewing this email? <a href=3D"https://nam04.safelinks.prote=
+ction.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.e=
+yJidWxsZXRpbl9saW5rX2lkIjoxMDAsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoi=
+MjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL2NvbnRlbnQuZ292ZGVsaXZlcnkuY29=
+tL2FjY291bnRzL1dBRE9DL2J1bGxldGlucy8yNzhhOWYzIn0.G4VDcnlv1ODO5PdDhFOkXR0_eS=
+lmPCcOVOtgrxO1Lok%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff=
+4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C637162142=
+235436495&amp;sdata=3DfR5egpUfvlVAyqNCQh5JygE0OV9PHWIuMECbPqIt6RY%3D&amp;re=
+served=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZ=
+XRpbl9saW5rX2lkIjoxMDAsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAx=
+MjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL2NvbnRlbnQuZ292ZGVsaXZlcnkuY29tL2FjY29=
+1bnRzL1dBRE9DL2J1bGxldGlucy8yNzhhOWYzIn0.G4VDcnlv1ODO5PdDhFOkXR0_eSlmPCcOVO=
+tgrxO1Lok/br/74469033372-l" shash=3D"RTSFqH0Hi995jtm&#43;1DPK5yzzCHT8S090lc=
+3sOlBmDvjyRxu9egp3dvpKWXekFZg5HfSy08dHxS9wwA/8CEUg4&#43;4dmPbCSdoYFZBioM/2F=
+hTOOS6VTeYF2eyG0Z7DPxquCoLFWCiZPQhxUAM1VE337jJckJDn3o8Sm/h8c6h4NIc=3D" titl=
+e=3D"View it online" rel=3D"noopener" target=3D"_blank" style=3D"color:#ea5=
+f14; text-decoration:underline; word-break:break-word">
+View it online</a></p>
+<img class=3D"m_-7154407533883729081govd_template_image" alt=3D"Commerce Lo=
+go" style=3D"width:251px; height:auto!important; max-height:auto!important;=
+ border:none" width=3D"251" height=3D"90" src=3D"https://content.govdeliver=
+y.com/attachments/fancy_images/WADOC/2020/01/3075461/logo-rgb-250x90_origin=
+al.png">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td id=3D"m_-7154407533883729081banner-bg" style=3D"background-color:#0982a=
+0; padding:0px 0 0px 0px" bgcolor=3D"#0982A0">
+<table class=3D"m_-7154407533883729081main-table" style=3D"border-collapse:=
+collapse" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"cente=
+r">
+<tbody>
+<tr>
+<td class=3D"m_-7154407533883729081tablecell" width=3D"100%" valign=3D"top"=
+ align=3D"left">
+<table style=3D"border-collapse:collapse" width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0" align=3D"left">
+<tbody>
+<tr>
+<td id=3D"m_-7154407533883729081banner-content" style=3D"padding:30px" widt=
+h=3D"100%">
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#ff=
+ffff; font-family:helvetica; font-size:9px">
+&nbsp;</p>
+<h1 style=3D"margin-top:0; margin-bottom:10px; line-height:1.1; font-weight=
+:normal; color:#ffffff; font-family:georgia,palatino; font-size:55px; text-=
+align:left" align=3D"left">
+News Release</h1>
+<h2 style=3D"margin-top:0px; margin-bottom:10px; line-height:1.1; font-weig=
+ht:normal; color:#ffffff; font-family:helvetica; font-size:16px">
+FOR IMMEDIATE RELEASE</h2>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td id=3D"m_-7154407533883729081top-image" width=3D"100%"></td>
+</tr>
+<tr>
+<td id=3D"m_-7154407533883729081image-bar" style=3D"background-color:#55555=
+5; padding:0px 30px" width=3D"100%" bgcolor=3D"#555555">
+<h3 style=3D"margin-top:10px; margin-bottom:10px; line-height:1.1; font-wei=
+ght:normal; color:#ffffff; font-size:12px; text-transform:uppercase; font-f=
+amily:helvetica">
+Jan. 29, 2020</h3>
+</td>
+</tr>
+<tr>
+<td id=3D"m_-7154407533883729081story-content" style=3D"padding:30px 30px 0=
+px" width=3D"100%">
+<h1 style=3D"margin-top:0; margin-bottom:10px; line-height:1; font-weight:b=
+old; color:#6e786d; font-family:helvetica">
+Millions of dollars in Earned Income Tax Credits go unclaimed each year =96=
+ is some of it yours?</h1>
+<h2 style=3D"margin-top:0px; margin-bottom:10px; line-height:1.1; font-weig=
+ht:normal; color:#0982a0; font-family:georgia,palatino">
+The Earned Income Tax Credit (EITC) is an important benefit for working peo=
+ple with low to moderate incomes, but you must file a federal tax return to=
+ get it, even if you owe no income tax.</h2>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica">
+OLYMPIA, WA =96 The Washington State Department of Commerce reminds anyone =
+earning up to $55,952 that they may be eligible to receive the federal Earn=
+ed Income Tax Credit (EITC). To take advantage of this benefit, you must fi=
+le a federal income tax return with
+ the <a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDE=
+sInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cm=
+wiOiJodHRwczovL3d3dy5pcnMuZ292L2NyZWRpdHMtZGVkdWN0aW9ucy9pbmRpdmlkdWFscy9lY=
+XJuZWQtaW5jb21lLXRheC1jcmVkaXQifQ.s7FpUPbdyQD2ZvTGE0H4_ej1Os9Vih_Ek1RICvo3H=
+mI%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a79=
+7af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C637162142235446487&amp;s=
+data=3DtByCZq0diiq5%2BEE32QZ9WD8jQENZH84bV7RWPFZDkQQ%3D&amp;reserved=3D0" o=
+riginalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2=
+lkIjoxMDEsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0N=
+zEiLCJ1cmwiOiJodHRwczovL3d3dy5pcnMuZ292L2NyZWRpdHMtZGVkdWN0aW9ucy9pbmRpdmlk=
+dWFscy9lYXJuZWQtaW5jb21lLXRheC1jcmVkaXQifQ.s7FpUPbdyQD2ZvTGE0H4_ej1Os9Vih_E=
+k1RICvo3HmI/br/74469033372-l" shash=3D"CtmBRTq2eJL&#43;sox7iC/DSeY1XcFe9YC1=
+EA44geMoBgkaYnX6xXl57BPoePs3M2/gDt1kOukcHi09euoB&#43;mm3OlxFtWBRKk9g73ndjle=
+94ib4y&#43;Vnd7CqHDu0/F1/roANPHEDWdMflH9kjqL2aLMi&#43;nmkdrLCoegBv8/D6/8vjy=
+4=3D" title=3D"" rel=3D"noopener" target=3D"_blank" style=3D"color:#ea5f14;=
+ text-decoration:underline; word-break:break-word">
+Internal Revenue Service </a>(IRS) even if you owe no income tax or are not=
+ otherwise required to file a tax return. Last year the average EITC was $2=
+,205.</p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica">
+Many people are eligible for this tax benefit, but it often goes unclaimed.=
+ The IRS estimates 20% of those eligible either do not claim the benefit on=
+ their taxes or do not file a tax return at all. Seniors, individuals with =
+low incomes, and non-English speaking
+ taxpayers account for much of the unclaimed credits because they don=92t r=
+ealize they are eligible. The credit reduces the amount of taxes owed and r=
+esults in a lump sum refund payment for most people who are eligible to cla=
+im it.</p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica">
+<strong>Gov. Jay Inslee</strong> proclaimed Jan. 31, 2020 as =93Earned Inco=
+me Tax Credit Awareness Day=94 in the state of Washington as part of a nati=
+onwide effort to spread the word about this under-used tax credit and provi=
+de information and resources to claim
+ it. <a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps=
+%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDI=
+sInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cm=
+wiOiJodHRwczovL3d3dy5jb21tZXJjZS53YS5nb3Yvd3AtY29udGVudC91cGxvYWRzLzIwMjAvM=
+DEvR292LTIwMjAtRUlUQy1Qcm9jbGFtYXRpb24ucGRmIn0.uOArpNfA8Ai_d9RGxsSoolb8pKQz=
+oVjt5lEEtWIS7R0%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a=
+1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C63716214223=
+5446487&amp;sdata=3DwqCbKB%2F9MEf17cPlSShacw9B0QTk57PodZuhKFvVK%2Bc%3D&amp;=
+reserved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWx=
+sZXRpbl9saW5rX2lkIjoxMDIsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMD=
+AxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5jb21tZXJjZS53YS5nb3Yvd3AtY29ud=
+GVudC91cGxvYWRzLzIwMjAvMDEvR292LTIwMjAtRUlUQy1Qcm9jbGFtYXRpb24ucGRmIn0.uOAr=
+pNfA8Ai_d9RGxsSoolb8pKQzoVjt5lEEtWIS7R0/br/74469033372-l" shash=3D"gry1wYqI=
+kCXWp&#43;wPLITJs4x6XoTU3elt3XFHDmfUjjAen9tGhEe&#43;0COgm5kMuqXVmyXGXMS&#43=
+;MfRYaxfPEs0&#43;XUXK62HzEFiLVOpdwUmon8eH5b3fvct0EtRnOX986DErSOpLPE/BllXK6h=
+5AT36oLlwpkiPn6FTd04n2&#43;eHmD3g=3D" title=3D"" rel=3D"noopener" target=3D=
+"_blank" style=3D"color:#ea5f14; text-decoration:underline; word-break:brea=
+k-word">
+Read the Governor=92s proclamation.</a></p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica">
+=93Together, the Earned Income Tax Credit and low-income Child Tax Credit (=
+CTC) are among the strongest tools available to help move families out of p=
+overty and promote work,&quot; Gov. Jay Inslee said. =93We want to make sur=
+e that all Washingtonians are aware of this
+ opportunity, as one in five eligible taxpayers do not claim or receive the=
+ credit they are due.=94</p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica">
+In 2019, 388,000 Washington residents applied for the credit, claiming $856=
+ million in refunds. This year, individuals can receive a tax refund of up =
+to $6,557 if they meet eligibility requirements.</p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica">
+=93The earned income tax credit is a triple win for families, businesses, a=
+nd communities,=94 said
+<strong>Lisa Brown</strong>, director of the Department of Commerce. =93EIT=
+C dollars strengthen family finances and also strengthen communities when t=
+hose dollars flow into the local economy.=94</p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica">
+<strong>Free tax preparation, other resources available</strong></p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica">
+The Department of Commerce and Department of Social and Health Services par=
+tner with many local agencies and nonprofit organizations across the state =
+to raise awareness about the Earned Income Tax Credit and free tax preparat=
+ion services.</p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica">
+To learn more, visit <a href=3D"https://nam04.safelinks.protection.outlook.=
+com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9=
+saW5rX2lkIjoxMDMsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMT=
+YyODE0NzEiLCJ1cmwiOiJodHRwczovL3dhMjExLm9yZy8ifQ.nypE1khygZn6xcltCj99Pvt7W9=
+9ehlXcb6xhUcC7yUA%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff=
+4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C637162142=
+235456483&amp;sdata=3DHsqJNtIKOi4CB5Qxsk9b2PGRDx6ywzQT%2FINe5DyNtrI%3D&amp;=
+reserved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWx=
+sZXRpbl9saW5rX2lkIjoxMDMsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMD=
+AxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3dhMjExLm9yZy8ifQ.nypE1khygZn6xcltCj=
+99Pvt7W99ehlXcb6xhUcC7yUA/br/74469033372-l" shash=3D"xTW8fLyEGiG0LmXrTiOepH=
+lEszJoVB1iMsi35ntTaLj&#43;QodCbIXfnkupExJxH&#43;8kQz&#43;uNJk0H&#43;Pp5/2JX=
+jlLcmS0ICsCvuKBkgMajCwJ1doY/y1SpJcPlErDjkXT/Rds2U3AksO6slJZjhOWYUeO/QLnSePW=
+K2wZMzVeqe49h0M=3D" title=3D"" rel=3D"noopener" target=3D"_blank" style=3D"=
+color:#ea5f14; text-decoration:underline; word-break:break-word">
+https://wa211.org/</a> or call the Washington Information Line by dialing 2=
+-1-1 and ask for free tax preparation services. The IRS has a one-stop =93E=
+ITC Central=94 website with information in multiple languages and alternati=
+ve formats at
+<a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2=
+F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDQsInVy=
+aSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJ=
+odHRwczovL3d3dy5laXRjLmlycy5nb3YifQ.CM3lzXkZoDxXgy28DkT5h6eICg-QN-dnvFXljwM=
+iwmI%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a=
+797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C637162142235456483&amp=
+;sdata=3DS0WCmmbyVtcGzmm%2FoFeL4G10WriGHo7op%2FcBuO2hZgI%3D&amp;reserved=3D=
+0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW=
+5rX2lkIjoxMDQsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyO=
+DE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5laXRjLmlycy5nb3YifQ.CM3lzXkZoDxXgy28DkT5h=
+6eICg-QN-dnvFXljwMiwmI/br/74469033372-l" shash=3D"Dw9tpA/movSL5jw7SVgzxa3E2=
+AVW6EIsEMAoF6F5o85H0ung9&#43;QW005V/3M7f89vRekzA5zY&#43;vG&#43;dpDnwN6lGDv9=
+WIarI8f85tV8IP7Paka2B06X7pWzyHH&#43;bSoMMiJPeb0T&#43;clsjrDAxQtNcKfwbX7Nd8j=
+zFEEIqKWQPECZ8fo=3D" title=3D"" rel=3D"noopener" target=3D"_blank" style=3D=
+"color:#ea5f14; text-decoration:underline; word-break:break-word">
+www.eitc.irs.gov</a>.</p>
+<h3 style=3D"margin-top:30px; margin-bottom:20px; line-height:1.4; font-wei=
+ght:normal; color:#555555; font-family:helvetica">
+<a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2=
+F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDUsInVy=
+aSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJ=
+odHRwczovL3d3dy5jb21tZXJjZS53YS5nb3YvbWVkaWEtY2VudGVyLyJ9.1M2NikJKuwRR6XK5M=
+RgqLG4Th6LM_CzxwpXUVra3VR0%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C902=
+6f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C1%7C=
+637162142235466475&amp;sdata=3DyNuyCDM7LwbDO8PFm1nW30%2F44MXvm63HjGmqbmTRDi=
+k%3D&amp;reserved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ=
+9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDUsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkI=
+joiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5jb21tZXJjZS53YS5nb3Yv=
+bWVkaWEtY2VudGVyLyJ9.1M2NikJKuwRR6XK5MRgqLG4Th6LM_CzxwpXUVra3VR0/br/7446903=
+3372-l" shash=3D"KnXsp/lUW&#43;2xMKcBw05Pj7S6fpzPpaPL/sbYbWd3E5E4pm4OLco/dN=
+puzXvfO0xid0oF8kMj1cQquuHQzmAXZfRgKEvQ0JUi3ubbTCL5h5Stf0yyw4ElSofL41LKy1b&#=
+43;tVsORpchepd0VALkkpapQwZRHp/TFXYdBuapC8Fi&#43;gY=3D" title=3D"" rel=3D"no=
+opener" target=3D"_blank" style=3D"color:#ffffff; text-decoration:none; wor=
+d-break:break-word; background-color:#ea5f14; border-radius:6px; text-trans=
+form:uppercase; border-color:#ea5f14; border-style:solid; border-width:15px=
+ 18px">Media
+ center</a></h3>
+<img class=3D"m_-7154407533883729081govd_template_image" style=3D"width:540=
+px; height:auto!important; max-height:auto!important; border:none" width=3D=
+"540" height=3D"55" src=3D"https://content.govdelivery.com/attachments/fanc=
+y_images/WADOC/2019/04/2537294/line2_original.jpg">
+</td>
+</tr>
+<tr>
+<td id=3D"m_-7154407533883729081additional-info" style=3D"padding:0px 30px =
+20px" width=3D"100%">
+<h1 style=3D"margin-top:0; margin-bottom:10px; line-height:1.1; font-weight=
+:normal; color:#0982a0; font-family:helvetica; font-size:18px; text-align:l=
+eft" align=3D"left">
+Contact</h1>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica; font-size:14px; text-align:left" align=3D"left=
+">
+<a href=3D"mailto:penny.thomas@commerce.wa.gov" title=3D"Penny Thomas" rel=
+=3D"noopener" target=3D"_blank" style=3D"color:#ea5f14; text-decoration:und=
+erline; word-break:break-word">Penny Thomas</a></p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica; font-size:14px; text-align:left" align=3D"left=
+">
+Commerce Communications, (206) 256-6106 | Mobile/text: (360) 704-9489</p>
+</td>
+</tr>
+<tr>
+<td id=3D"m_-7154407533883729081bottom-line-1" style=3D"line-height:1px; pa=
+dding-top:20px" width=3D"100%" align=3D"center">
+<img class=3D"m_-7154407533883729081govd_template_image" style=3D"width:600=
+px; height:auto!important; max-height:auto!important; border:none" width=3D=
+"600" height=3D"10" src=3D"https://content.govdelivery.com/attachments/fanc=
+y_images/WADOC/2020/01/3080083/emailfooter-stripe_original.png">
+</td>
+</tr>
+<tr>
+<td id=3D"m_-7154407533883729081footer-bg" style=3D"background-color:#9e9e9=
+e; padding:30px" bgcolor=3D"#9E9E9E">
+<table class=3D"m_-7154407533883729081main-table" style=3D"border-collapse:=
+collapse" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" align=3D"cente=
+r">
+<tbody>
+<tr>
+<td class=3D"m_-7154407533883729081tablecell" width=3D"74%" valign=3D"top" =
+align=3D"left">
+<table style=3D"border-collapse:collapse" width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0" align=3D"left">
+<tbody>
+<tr>
+<td id=3D"m_-7154407533883729081left-footer" width=3D"100%"><img class=3D"m=
+_-7154407533883729081govd_template_image" style=3D"width:173px; height:auto=
+!important; max-height:auto!important; border:none" width=3D"173" height=3D=
+"62" src=3D"https://content.govdelivery.com/attachments/fancy_images/WADOC/=
+2020/01/3080109/logo-white-250x90_original.png">
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class=3D"m_-7154407533883729081tablecell" width=3D"26%" valign=3D"top" =
+align=3D"right">
+<table style=3D"border-collapse:collapse" width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0" align=3D"left">
+<tbody>
+<tr>
+<td id=3D"m_-7154407533883729081right-footer" style=3D"padding:0px 0px 10px=
+" width=3D"100%">
+<p style=3D"line-height:1.1; margin-top:0; margin-bottom:0; color:#ffffff; =
+font-family:helvetica; font-size:14px; text-align:center" align=3D"center">
+Stay connected</p>
+</td>
+</tr>
+<tr>
+<td id=3D"m_-7154407533883729081main-social" width=3D"100%" align=3D"center=
+"><a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A=
+%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDYsIn=
+VyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiO=
+iJodHRwczovL3B1YmxpYy5nb3ZkZWxpdmVyeS5jb20vYWNjb3VudHMvV0FET0Mvc3Vic2NyaWJl=
+ci9uZXcifQ.2tbV4IK86wbBN3vThABskQ3ZFossOmBMrcgMaw0jJYo%2Fbr%2F74469033372-l=
+&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e3=
+1a9156cb5cff788df%7C0%7C1%7C637162142235466475&amp;sdata=3DSb%2BeZa6kXBI4EI=
+YCdb0O10dfJhjCIMgLDfILGps4BeU%3D&amp;reserved=3D0" originalsrc=3D"https://l=
+nks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDYsInVyaSI6ImJwM=
+jpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczov=
+L3B1YmxpYy5nb3ZkZWxpdmVyeS5jb20vYWNjb3VudHMvV0FET0Mvc3Vic2NyaWJlci9uZXcifQ.=
+2tbV4IK86wbBN3vThABskQ3ZFossOmBMrcgMaw0jJYo/br/74469033372-l" shash=3D"xHQo=
+d8mDCeneyXvH4SzWEP8EcBMyo79nZJoLWDli4mrHwEvCmvavqnmLLKKB5MGvz44LFiI5aw6X9HJ=
+Drs2GPpXOaJG1zXsQBIrXnPi5VBJdun628RfPW2x4hTCicS8U&#43;b4q5m&#43;sG7hDqLvHa6=
+Bit9brKiayR2IVl4p51J/3sv0=3D" rel=3D"noopener noreferrer" title=3D"Subscrib=
+e" target=3D"_blank" style=3D"color:#ea5f14; text-decoration:underline; wor=
+d-break:break-word"><img class=3D"m_-7154407533883729081govd_template_image=
+" alt=3D"subscribe" style=3D"width:42px; height:auto!important; max-height:=
+auto!important; border:none" width=3D"42" height=3D"32" src=3D"https://cont=
+ent.govdelivery.com/attachments/fancy_images/WADOC/2019/04/2537344/soc-01_o=
+riginal.png"></a><a href=3D"https://nam04.safelinks.protection.outlook.com/=
+?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5=
+rX2lkIjoxMDcsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyOD=
+E0NzEiLCJ1cmwiOiJodHRwczovL3R3aXR0ZXIuY29tL3dhc3RhdGVjb21tZXJjZSJ9.m_Bu7Lfl=
+QJbFPlQ2t754_oT_kwoYZlqAxVmydAZwupc%2Fbr%2F74469033372-l&amp;data=3D02%7C01=
+%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7=
+C0%7C1%7C637162142235476469&amp;sdata=3D5UsUziI2cZDO9hP9LJ7sxOs8rhGAhkvccy%=
+2Bg8X3pon0%3D&amp;reserved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOi=
+JIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDcsInVyaSI6ImJwMjpjbGljayIsImJ1bGxl=
+dGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3R3aXR0ZXIuY29tL3d=
+hc3RhdGVjb21tZXJjZSJ9.m_Bu7LflQJbFPlQ2t754_oT_kwoYZlqAxVmydAZwupc/br/744690=
+33372-l" shash=3D"LwaNZ/sZozFTVRWnYvurSMwibA74f9KQuf7SgMmQtrOKqt81kPs&#43;n=
+Ot6Grr3Q0wAmYfYRgGyeWfzJGG&#43;hXS7ywl&#43;CH96ZCP3UUHLJ82ELLYMVEcTaQotBVn6=
+rZMq7brhQ0IgBzuE2O0c&#43;FjrKZ1hhE1goT1qJkP6KOnUPr7ERxI=3D" rel=3D"noopener=
+ noreferrer" title=3D"Twitter" target=3D"_blank" style=3D"color:#ea5f14; te=
+xt-decoration:underline; word-break:break-word"><img class=3D"m_-7154407533=
+883729081govd_template_image" alt=3D"twitter" style=3D"width:42px; height:a=
+uto!important; max-height:auto!important; border:none" width=3D"42" height=
+=3D"32" src=3D"https://content.govdelivery.com/attachments/fancy_images/WAD=
+OC/2019/04/2537345/soc-02_original.png"></a><a href=3D"https://nam04.safeli=
+nks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIU=
+zI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDgsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGl=
+uX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5mYWNlYm9vay5jb2=
+0vV0FTdGF0ZUNvbW1lcmNlLyJ9.-pL7lUu8eyKDd774AgpImSwgPHyAja6_g65mGJ1iL5w%2Fbr=
+%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7=
+C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C637162142235476469&amp;sdata=3D=
+L31liqi4whyl5aa%2FWDnO5bJSOr8bdmA92KVdhWhr11k%3D&amp;reserved=3D0" original=
+src=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxM=
+DgsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1=
+cmwiOiJodHRwczovL3d3dy5mYWNlYm9vay5jb20vV0FTdGF0ZUNvbW1lcmNlLyJ9.-pL7lUu8ey=
+KDd774AgpImSwgPHyAja6_g65mGJ1iL5w/br/74469033372-l" shash=3D"TpHh6J3rxSVcyG=
+1/EWwrVP88mJdguVlFoB7iWsHmRyDO8HuA2c3hj7fg2vR&#43;6Tbo8gv/L5MurEYYvDjGJ9QTS=
+VmW19uPX2Vb0NugPfL8gB7JU5N87i3bZ7QgoTQ&#43;I5d6Y3ZkZ9oNQryidfa4df9WhXHzrPKT=
+aPioih1Hw5XHvew=3D" rel=3D"noopener noreferrer" title=3D"Facebook" target=
+=3D"_blank" style=3D"color:#ea5f14; text-decoration:underline; word-break:b=
+reak-word"><img class=3D"m_-7154407533883729081govd_template_image" alt=3D"=
+facebook" style=3D"width:33px; height:auto!important; max-height:auto!impor=
+tant; border:none" width=3D"33" height=3D"32" src=3D"https://content.govdel=
+ivery.com/attachments/fancy_images/WADOC/2019/04/2537346/soc-03_original.pn=
+g"></a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td id=3D"m_-7154407533883729081bottom-footer" style=3D"padding:50px 30px" =
+width=3D"100%">
+<h1 style=3D"margin-top:0; margin-bottom:10px; line-height:1.1; font-weight=
+:normal; color:#0982a0; font-family:helvetica; font-size:20px; text-align:l=
+eft" align=3D"left">
+About Commerce</h1>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica; font-size:12px; text-align:left" align=3D"left=
+">
+Commerce works with local governments, businesses, community-based organiza=
+tions and tribes to strengthen communities. The department=92s diverse port=
+folio of more than 100 programs and effective public and private partnershi=
+ps promote sustainable community and
+ economic development to help all Washingtonians thrive. For more informati=
+on, visit
+<a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2=
+F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMDksInVy=
+aSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJ=
+odHRwOi8vd3d3LmNvbW1lcmNlLndhLmdvdiJ9.thg-EIdL4JluCjdXEuX3VKAETm2690UfHDAsY=
+QVuThs%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d=
+7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C637162142235486465&a=
+mp;sdata=3DeUrbSE4%2F5OXy%2FkrPyQzCqhe8HWQnP4xVGA3%2BJpu%2BUJ8%3D&amp;reser=
+ved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRp=
+bl9saW5rX2lkIjoxMDksInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjk=
+uMTYyODE0NzEiLCJ1cmwiOiJodHRwOi8vd3d3LmNvbW1lcmNlLndhLmdvdiJ9.thg-EIdL4JluC=
+jdXEuX3VKAETm2690UfHDAsYQVuThs/br/74469033372-l" shash=3D"h/UjEcf1sm1xC3ruo=
+mBxhsr0nGI6jI351RhjUr5Xx7dUc/ydrzVLaQ&#43;4wvkk3H3vI36fZFDdgulj/lgY5TETY12h=
+ag1XZwbWQr8EoqrvGyO4GFZazHOku95Iz/eVyA3khgtxGObqtVjdRyV2VK2FVrdu/4/G1XmTyBB=
+675cTEPw=3D" title=3D"www.commerce.wa.gov" rel=3D"noopener" target=3D"_blan=
+k" style=3D"color:#ea5f14; text-decoration:underline; word-break:break-word=
+">
+http://www.commerce.wa.gov</a>. For information on locating or expanding a =
+business in Washington, visit
+<a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2=
+F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTAsInVy=
+aSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJ=
+odHRwOi8vY2hvb3Nld2FzaGluZ3RvbnN0YXRlLmNvbS8ifQ.d2x7LEQPBwcSbq3hUkv99NwTIaO=
+RSZMaDRs4rppbTP8%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4=
+a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C6371621422=
+35486465&amp;sdata=3DJrt6rTZmyubfa581ffIw2U8S5262ouIEvxN8ralj9iA%3D&amp;res=
+erved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZX=
+Rpbl9saW5rX2lkIjoxMTAsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxM=
+jkuMTYyODE0NzEiLCJ1cmwiOiJodHRwOi8vY2hvb3Nld2FzaGluZ3RvbnN0YXRlLmNvbS8ifQ.d=
+2x7LEQPBwcSbq3hUkv99NwTIaORSZMaDRs4rppbTP8/br/74469033372-l" shash=3D"GHED4=
+&#43;i3LXEdfulRHmufzW74oKq&#43;HRV3AHdXReQXXDAA8yP79g6Xr/Ldp13hsHZQS8jsKV1c=
+z6acGUr0RLI&#43;7RGBhbvvpUYGNNQ5p9LUkr1eA95NdpkUAn792waz&#43;eEOPXoKr5QvNM/=
+4LMoZyEDXYovoA/I53nNZ8HnS6cfNuJc=3D" title=3D"www.choosewashington.com" rel=
+=3D"noopener" target=3D"_blank" style=3D"color:#ea5f14; text-decoration:und=
+erline; word-break:break-word">
+choosewashingtonstate.com</a>.</p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica; font-size:12px; text-align:left" align=3D"left=
+">
+Update your subscriptions, modify your password or email address, or stop s=
+ubscriptions at any time on your
+<a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2=
+F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTEsInVy=
+aSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJ=
+odHRwczovL3B1YmxpYy5nb3ZkZWxpdmVyeS5jb20vYWNjb3VudHMvV0FET0Mvc3Vic2NyaWJlci=
+9uZXc_cHJlZmVyZW5jZXM9dHJ1ZSJ9.qOakEoNVkNuYFTAtJ9BTY6nhXjyrZ8hwvyFgYIEXE2s%=
+2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af=
+00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C637162142235496459&amp;sdat=
+a=3DSi%2FHEiAjxS6e4hvu8j7F0Xi4UJwYajNlDg7aIHgVzfo%3D&amp;reserved=3D0" orig=
+inalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkI=
+joxMTEsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEi=
+LCJ1cmwiOiJodHRwczovL3B1YmxpYy5nb3ZkZWxpdmVyeS5jb20vYWNjb3VudHMvV0FET0Mvc3V=
+ic2NyaWJlci9uZXc_cHJlZmVyZW5jZXM9dHJ1ZSJ9.qOakEoNVkNuYFTAtJ9BTY6nhXjyrZ8hwv=
+yFgYIEXE2s/br/74469033372-l" shash=3D"LHlCJvbuhFNkVKM2xLOokexcAhIBthZdYRxXo=
+DFHABjX7WzmOop7xH1nzKkWV0zEL7FfRUo5XHYTFtGeHxk1IKMd5257/oymZt7gD7ht90UWStd3=
+zPpnHlJk9mcvFSKBsR/9WPfWSygUHg4Zi46GUFSpwjOyWQGo7nAb19izzoc=3D" title=3D"Su=
+bscriber Preferences" rel=3D"noopener" target=3D"_blank" style=3D"color:#ea=
+5f14; text-decoration:underline; word-break:break-word">
+Subscriber Preferences Page</a>. You will need to use your email address to=
+ log in. If you have questions or problems with the subscription service, p=
+lease visit
+<a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2=
+F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTIsInVy=
+aSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJ=
+odHRwczovL3N1YnNjcmliZXJoZWxwLmdvdmRlbGl2ZXJ5LmNvbS8ifQ.yVC76TIueAnG9L_AB3R=
+0rKGW4Z852StRsV4i8FhKrgM%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f=
+6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C63=
+7162142235496459&amp;sdata=3D0naowFpshTCO9X8oMspBPy46DGdAYPScMI6qdRvpiJM%3D=
+&amp;reserved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.ey=
+JidWxsZXRpbl9saW5rX2lkIjoxMTIsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiM=
+jAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3N1YnNjcmliZXJoZWxwLmdvdmRlbGl2=
+ZXJ5LmNvbS8ifQ.yVC76TIueAnG9L_AB3R0rKGW4Z852StRsV4i8FhKrgM/br/74469033372-l=
+" shash=3D"CbUQGsCunEc/jwZlwu66ilaWOrjjwNRyOOtoLxG9SrkHZAcdnMuIdVzBJ5wkaoQo=
+douzUXqf0kzbGIN6LYofuNEi17jdN32hRNh0ZRAJjCawxB5RiVPBg9YCkXSLGe08ENdn2mtyIoM=
+DxmPdlwaRxcCLX7uRqJfEGzW9wui/C2g=3D" title=3D"Subscription Help" rel=3D"noo=
+pener" target=3D"_blank" style=3D"color:#ea5f14; text-decoration:underline;=
+ word-break:break-word">
+subscriberhelp.govdelivery.com</a>.</p>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica; font-size:12px; text-align:left" align=3D"left=
+">
+This service is provided to you at no charge by <a href=3D"https://nam04.sa=
+felinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciO=
+iJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTMsInVyaSI6ImJwMjpjbGljayIsImJ1bGx=
+ldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5jb21tZXJjZS=
+53YS5nb3YvIn0.nBZCTLi0akBc96XmYtbJA2XkdGwootVDzqflo5pvr9E%2Fbr%2F7446903337=
+2-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d711=
+4e31a9156cb5cff788df%7C0%7C0%7C637162142235506452&amp;sdata=3DG0ifD759NOp0l=
+dmh4UssXjY4pfsbgSk84WpQj%2FPpGoQ%3D&amp;reserved=3D0" originalsrc=3D"https:=
+//lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTMsInVyaSI6Im=
+JwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwc=
+zovL3d3dy5jb21tZXJjZS53YS5nb3YvIn0.nBZCTLi0akBc96XmYtbJA2XkdGwootVDzqflo5pv=
+r9E/br/74469033372-l" shash=3D"S6ppia3TWd78Tc8a/n9xW3ARa4VZneQuiv1GB9BChzth=
+TPH2ZgSyac84I5yIXrVoBwjoYtXFXX3Njaax1zSBISw50SZESGLzNkhxyugy/UnVs9h8iWq7ELX=
+Rq8pbdLdsojm3jC2VYfoTG/&#43;YsG2xXymXSv/cZAdCXoJC9Dgbaxg=3D" title=3D"www.c=
+ommerce.wa.gov" rel=3D"noopener" target=3D"_blank" style=3D"color:#ea5f14; =
+text-decoration:underline; word-break:break-word">
+Washington Department of Commerce</a>.</p>
+<p style=3D"text-align:left; line-height:1.4; margin-top:10px; margin-botto=
+m:10px; color:#6e767d; font-family:helvetica; font-size:12px" align=3D"left=
+">
+<a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2=
+F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTQsInVy=
+aSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJ=
+odHRwczovL3B1YmxpYy5nb3ZkZWxpdmVyeS5jb20vYWNjb3VudHMvV0FET0Mvc3Vic2NyaWJlci=
+9uZXc_cG9wPXQifQ.5Rk1NQurcS0Jnatb81uwTnifZ5Q6RAwN57m-3mu4deM%2Fbr%2F7446903=
+3372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d=
+7114e31a9156cb5cff788df%7C0%7C0%7C637162142235506452&amp;sdata=3DlxW2KVMheD=
+24DSZiuLSktRR4lhWLhlzdSpIJHn%2BsAE4%3D&amp;reserved=3D0" originalsrc=3D"htt=
+ps://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTQsInVyaSI=
+6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodH=
+RwczovL3B1YmxpYy5nb3ZkZWxpdmVyeS5jb20vYWNjb3VudHMvV0FET0Mvc3Vic2NyaWJlci9uZ=
+Xc_cG9wPXQifQ.5Rk1NQurcS0Jnatb81uwTnifZ5Q6RAwN57m-3mu4deM/br/74469033372-l"=
+ shash=3D"bXwp2Jz3LvaXcz6WukO0YewjnAoE6wlToYp64LxRjdC7OPHMksN94p/0Ejp8ghMWW=
+TLWOFzB27ZqQnIoYwCZtv89f0f9hNrfY64kHqnZlRyQQULMUXY&#43;Oo6pICi4XUBA6dsdKfUt=
+JiwCrGdJHs5VCrx9T0rCX4l67ACP0TPWOO0=3D" title=3D"Subscribe" rel=3D"noopener=
+" target=3D"_blank" style=3D"color:#ea5f14; text-decoration:underline; word=
+-break:break-word">Subscribe</a>
+ | <a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3=
+A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTUsI=
+nVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwi=
+OiJodHRwOi8vcHVibGljLmdvdmRlbGl2ZXJ5LmNvbS9hY2NvdW50cy9XQURPQy9zdWJzY3JpYmV=
+ycy9uZXc_cHJlZmVyZW5jZXM9dHJ1ZSJ9.I9WrdhlSIAasJclDdj7zIjgTHE_BVEkXj4vzW10FW=
+iw%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a79=
+7af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C637162142235516447&amp;s=
+data=3DrLjcpTRG4d7hpUXHKFrG73%2F%2BxzJytclGWE4w7kMI21s%3D&amp;reserved=3D0"=
+ originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5r=
+X2lkIjoxMTUsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE=
+0NzEiLCJ1cmwiOiJodHRwOi8vcHVibGljLmdvdmRlbGl2ZXJ5LmNvbS9hY2NvdW50cy9XQURPQy=
+9zdWJzY3JpYmVycy9uZXc_cHJlZmVyZW5jZXM9dHJ1ZSJ9.I9WrdhlSIAasJclDdj7zIjgTHE_B=
+VEkXj4vzW10FWiw/br/74469033372-l" shash=3D"SlSYKzM0AbSfks&#43;PGigT7Zfhjjhm=
+TPMf2pQ924WO9DSUqVGzdYycHWYSubpMJLUYb1KOzEAJNTAMIG5sStW9xQSbdyxPzMuPILsCoSM=
+WnTSwrkrZbz2AYS66CbFhOcD5CY9dmfsRmAOMdl8o9kil00JQXP6blaluOwZstfjtMgY=3D" ti=
+tle=3D"Manage your subscription" rel=3D"noopener" target=3D"_blank" style=
+=3D"color:#ea5f14; text-decoration:underline; word-break:break-word">
+Manage Preferences</a> | <a href=3D"https://nam04.safelinks.protection.outl=
+ook.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXR=
+pbl9saW5rX2lkIjoxMTYsInF1ZXJ5X3BhcmFtcyI6WyJ2ZXJpZmljYXRpb24iLCJkZXN0aW5hdG=
+lvbiJdLCJ1cmkiOiJicDI6Y2xpY2siLCJidWxsZXRpbl9pZCI6IjIwMjAwMTI5LjE2MjgxNDcxI=
+iwidXJsIjoiaHR0cHM6Ly9wdWJsaWMuZ292ZGVsaXZlcnkuY29tL2FjY291bnRzL1dBRE9DL3N1=
+YnNjcmliZXIvb25lX2NsaWNrX3Vuc3Vic2NyaWJlIn0.3QFODrLY6EoIVjMllq0Xo04k3nuyhwp=
+sBvVDA8BL700%2Fbr%2F74469033372-l%3Fverification%3D5.2a868b224562ff10be54d8=
+0caec76eeb%26destination%3Dffrancisc92%2540gmail.com&amp;data=3D02%7C01%7C%=
+7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7=
+C0%7C637162142235526441&amp;sdata=3DovZ0LYk1ihLsVPlUVRi6pTEYsVIePB5XZf6PCzh=
+2QJ8%3D&amp;reserved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1=
+NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTYsInF1ZXJ5X3BhcmFtcyI6WyJ2ZXJpZmljYXRpb2=
+4iLCJkZXN0aW5hdGlvbiJdLCJ1cmkiOiJicDI6Y2xpY2siLCJidWxsZXRpbl9pZCI6IjIwMjAwM=
+TI5LjE2MjgxNDcxIiwidXJsIjoiaHR0cHM6Ly9wdWJsaWMuZ292ZGVsaXZlcnkuY29tL2FjY291=
+bnRzL1dBRE9DL3N1YnNjcmliZXIvb25lX2NsaWNrX3Vuc3Vic2NyaWJlIn0.3QFODrLY6EoIVjM=
+llq0Xo04k3nuyhwpsBvVDA8BL700/br/74469033372-l?verification=3D5.2a868b224562=
+ff10be54d80caec76eeb&amp;destination=3Dffrancisc92%40gmail.com" shash=3D"D6=
+VSWJHxk3Z23tNcMh3lJi5kzyProdEi5zYabWgbgwmq/l3YmNQ4ExtdBSXK8lqUk0M037TFw5IVC=
+&#43;yp2Eu1Yw6WuMpFaDtEvXny/qx5hvGJ9jf7gIwaH8gOrN&#43;dHaC2IKI5QMO9fR4vLH3l=
+X/c343uQ3GJ856UEAVu3TTiEW3k=3D" title=3D"Unsubscribe from all Commerce upda=
+tes" rel=3D"noopener" target=3D"_blank" style=3D"color:#ea5f14; text-decora=
+tion:underline; word-break:break-word">
+Unsubscribe All</a> | <a href=3D"https://nam04.safelinks.protection.outlook=
+.com/?url=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl=
+9saW5rX2lkIjoxMTcsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuM=
+TYyODE0NzEiLCJ1cmwiOiJodHRwczovL3N1YnNjcmliZXJoZWxwLmdvdmRlbGl2ZXJ5LmNvbS8i=
+fQ.monvoIjcqFvh_2Eoa2BdLmeDW6Y4OSwD0w1FAEvisl8%2Fbr%2F74469033372-l&amp;dat=
+a=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb=
+5cff788df%7C0%7C0%7C637162142235526441&amp;sdata=3DP1ggQweaTPfk8BBrSJfj7gUo=
+gKgdlnvPo8mmg%2Fs57PA%3D&amp;reserved=3D0" originalsrc=3D"https://lnks.gd/l=
+/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTcsInVyaSI6ImJwMjpjbGlja=
+yIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3N1YnNj=
+cmliZXJoZWxwLmdvdmRlbGl2ZXJ5LmNvbS8ifQ.monvoIjcqFvh_2Eoa2BdLmeDW6Y4OSwD0w1F=
+AEvisl8/br/74469033372-l" shash=3D"IQEqCEvmX3pDEHxrqs95CYUa4QRj7MvTmZNYJX6F=
+2atmsGSv6IkFdzk9qYTysd25dXUen5RaGsQVrfIx9i&#43;wss0XZWfaQucISyZ9htmqwAyKQ2j=
+1VA3oBE6wIs/QnnvRa3Jzxb&#43;Ye9qsvGsCuhkiJNmH7KuveHEWcyJQsD7dpks=3D" title=
+=3D"Get help with your subscription" rel=3D"noopener" target=3D"_blank" sty=
+le=3D"color:#ea5f14; text-decoration:underline; word-break:break-word">
+Help</a> | <a href=3D"https://nam04.safelinks.protection.outlook.com/?url=
+=3Dhttps%3A%2F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2l=
+kIjoxMTgsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0Nz=
+EiLCJ1cmwiOiJodHRwczovL3d3dy5jb21tZXJjZS53YS5nb3YvY29udGFjdC11cy8ifQ.f9yMCC=
+iDkimWCr6Ext_xB34UtUujK_yp-aRM86m2-5A%2Fbr%2F74469033372-l&amp;data=3D02%7C=
+01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df=
+%7C0%7C0%7C637162142235536435&amp;sdata=3DB9TBoFp8PpPH0m8mC%2BLSaFMojLgijMd=
+I4wd5y7qTDnw%3D&amp;reserved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGci=
+OiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTgsInVyaSI6ImJwMjpjbGljayIsImJ1bG=
+xldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3d3dy5jb21tZXJjZ=
+S53YS5nb3YvY29udGFjdC11cy8ifQ.f9yMCCiDkimWCr6Ext_xB34UtUujK_yp-aRM86m2-5A/b=
+r/74469033372-l" shash=3D"oNM43sQuOsqdGZCfI4dWKWeg4sud43OZ02xB3MQt/yBWjTtGP=
+XB6kPehD4ZGFcnpxDNrXpvj5bNIcsKE/tQm0gg4mkG&#43;5cwGhEuAitRhIqpWQMVS4wuc7/ar=
+mbd1BTGTKeEoeDEOxhe4983170eECCBCrghbAyt71r9iK4hs5Js=3D" title=3D"Contact us=
+" rel=3D"noopener" target=3D"_blank" style=3D"color:#ea5f14; text-decoratio=
+n:underline; word-break:break-word">
+Contact us</a></p>
+<img class=3D"m_-7154407533883729081govd_template_image" style=3D"width:540=
+px; height:auto!important; max-height:auto!important; border:none" width=3D=
+"540" height=3D"55" src=3D"https://content.govdelivery.com/attachments/fanc=
+y_images/WADOC/2019/04/2537294/line2_original.jpg">
+<table style=3D"height:49px; width:99.815%; border-collapse:collapse" borde=
+r=3D"0">
+<tbody>
+<tr>
+<td style=3D"width:50%; color:#6e767d; font-family:helvetica; font-size:12p=
+x; text-align:left" align=3D"left">
+<img style=3D"height:auto; border:none" src=3D"https://content.govdelivery.=
+com/attachments/fancy_images/WADOC/2020/01/3082242/wa-counts-logo-final-whi=
+te-160x140px_original.png"></td>
+<td style=3D"width:50%; color:#6e767d; font-family:helvetica; font-size:12p=
+x; text-align:left" align=3D"left">
+<a href=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2=
+F%2Flnks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTksInVy=
+aSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJ=
+odHRwczovL3d3dy5vZm0ud2EuZ292L3dhc2hpbmd0b24tZGF0YS1yZXNlYXJjaC9wb3B1bGF0aW=
+9uLWRlbW9ncmFwaGljcy9kZWNlbm5pYWwtY2Vuc3VzLzIwMjAtY2Vuc3VzLWV2ZXJ5b25lLWNvd=
+W50cyJ9.t6AxKlSB7-Ka85MpsqIHKW08oA-aWkqJlS0k2p3lzIM%2Fbr%2F74469033372-l&am=
+p;data=3D02%7C01%7C%7C9026f6ea8aff4a1178e508d7a797af00%7C02d8ff38d7114e31a9=
+156cb5cff788df%7C0%7C0%7C637162142235536435&amp;sdata=3DY%2B5j%2B5wYQPoTOqy=
+uryCYmO9VVz1bZMMNw2Eq%2FZk%2FnHs%3D&amp;reserved=3D0" originalsrc=3D"https:=
+//lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMTksInVyaSI6Im=
+JwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwc=
+zovL3d3dy5vZm0ud2EuZ292L3dhc2hpbmd0b24tZGF0YS1yZXNlYXJjaC9wb3B1bGF0aW9uLWRl=
+bW9ncmFwaGljcy9kZWNlbm5pYWwtY2Vuc3VzLzIwMjAtY2Vuc3VzLWV2ZXJ5b25lLWNvdW50cyJ=
+9.t6AxKlSB7-Ka85MpsqIHKW08oA-aWkqJlS0k2p3lzIM/br/74469033372-l" shash=3D"Tz=
+lnWpXKY1t37hoX67EYHsIjo92Sm9/2oR4XxNt7&#43;grG/wzJs0M0Y8oROlxAxgJRZ7SiRt8q0=
+Ne&#43;tfOaCI8qngDa55dkqZUgwAbuK5XlHKFE7X/R9vktddqRryjHPIvTFGe0yHdV8jAIx8UJ=
+NQmoWzouMr3zOyw0J1Mu3TZQt/w=3D" title=3D"2020 Census" rel=3D"noopener" targ=
+et=3D"_blank" style=3D"color:#ea5f14; text-decoration:underline; word-break=
+:break-word">Learn
+ more about what you can do to promote participation in the 2020 Census whe=
+re you live.</a></td>
+</tr>
+</tbody>
+</table>
+<p style=3D"line-height:1.4; margin-top:10px; margin-bottom:10px; color:#6e=
+767d; font-family:helvetica; font-size:12px; text-align:left" align=3D"left=
+">
+&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div id=3D"m_-7154407533883729081mail_footer"></div>
+<div id=3D"m_-7154407533883729081tagline">
+<table style=3D"width:350px; margin:0 auto" width=3D"350" cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" align=3D"center">
+<tbody>
+<tr>
+<td style=3D"color:#757575; font-size:10px; font-family:Arial; padding:20px=
+ 5px 10px 5px" width=3D"100%" align=3D"center">
+This email was sent to <u></u>using GovDelivery Communications Cloud on beh=
+alf of: Washington State Department of Commerce =B7 1011 Plum Street SE, P.=
+O. Box 42525 =B7 Olympia, WA 98504-2525</td>
+</tr>
+<tr>
+<td style=3D"padding:0 5px 20px 5px" width=3D"100%" align=3D"center"><a hre=
+f=3D"https://nam04.safelinks.protection.outlook.com/?url=3Dhttps%3A%2F%2Fln=
+ks.gd%2Fl%2FeyJhbGciOiJIUzI1NiJ9.eyJidWxsZXRpbl9saW5rX2lkIjoxMjAsInVyaSI6Im=
+JwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDAxMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwc=
+zovL3N1YnNjcmliZXJoZWxwLmdyYW5pY3VzLmNvbS8ifQ.Zk2eBiS9amxdqPLTf9u0kYCBRp59_=
+gkAhMMJ-VBQOWI%2Fbr%2F74469033372-l&amp;data=3D02%7C01%7C%7C9026f6ea8aff4a1=
+178e508d7a797af00%7C02d8ff38d7114e31a9156cb5cff788df%7C0%7C0%7C637162142235=
+546429&amp;sdata=3DygwXqhF7vYWpBzh2T67EWNZ%2B%2Fa1vGg8nwT9NUu1gVXk%3D&amp;r=
+eserved=3D0" originalsrc=3D"https://lnks.gd/l/eyJhbGciOiJIUzI1NiJ9.eyJidWxs=
+ZXRpbl9saW5rX2lkIjoxMjAsInVyaSI6ImJwMjpjbGljayIsImJ1bGxldGluX2lkIjoiMjAyMDA=
+xMjkuMTYyODE0NzEiLCJ1cmwiOiJodHRwczovL3N1YnNjcmliZXJoZWxwLmdyYW5pY3VzLmNvbS=
+8ifQ.Zk2eBiS9amxdqPLTf9u0kYCBRp59_gkAhMMJ-VBQOWI/br/74469033372-l" shash=3D=
+"KrZSA6xftHltq9UW8KPHxix94XIU5AZgP22LKaZ7QVxluhQ55g/64DdvKzj19RgM21APAvU85O=
+Pvrxy7tQJuBmWUTNU7HAWOPgM5Ii0Cr3vgPdhJ7prZR3ITu7LFJbg5bGUFu0vFLM&#43;eS4wdo=
+lear6pRJjv68gPCSjE1k9k47qE=3D" rel=3D"noopener" target=3D"_blank"><img alt=
+=3D"GovDelivery logo" style=3D"width:115px; height:auto; border:none" width=
+=3D"115" border=3D"0" src=3D"https://content.govdelivery.com/images/govd-lo=
+go-dark.png"></a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<img alt=3D"" style=3D"border-width:0; border-style:hidden" width=3D"1" hei=
+ght=3D"1" src=3D"https://links.govdelivery.com/track?enid=3DZWFzPTEmbXNpZD0=
+mYXVpZD0mbWFpbGluZ2lkPTIwMjAwMTI5LjE2MjgxNDcxJm1lc3NhZ2VpZD1NREItUFJELUJVTC=
+0yMDIwMDEyOS4xNjI4MTQ3MSZkYXRhYmFzZWlkPTEwMDEmdHlwZT1vcGVuJnNlcmlhbD0xNjgyN=
+jAzNSZlbWFpbGlkPWZmcmFuY2lzYzkyQGdtYWlsLmNvbSZ1c2VyaWQ9ZmZyYW5jaXNjOTJAZ21h=
+aWwuY29tJnRhcmdldGlkPSZmbD0mbXZpZD0mZXh0cmE9JiYm"></div>
+</div>
+</div>
+<p></p>
+<div style=3D"background-color:#FFEB9C; width:100%; border-style:solid; bor=
+der-color:#9C6500; border-width:1pt; padding:2pt; font-size:10pt; line-heig=
+ht:12pt; font-family:'Calibri'; color:Black; text-align:left">
+<span style=3D"color:#9C6500">CAUTION:</span> This email originated outside=
+ of the Seattle Colleges=92 email system. Do not click links or open attach=
+ments unless you recognize the sender and know the content is safe. Questio=
+ns? Contact IT Services at x6333 (Central),
+ x3630 (North), x5844 (South) or email ITHelp@seattlecolleges.edu.</div>
+<br>
+<p></p>
+</div>
+</div>
+</body>
+</html>
+
+--_000_CY4PR0701MB37003794A06DABEEE3C8ED4BE1010CY4PR0701MB3700_--
