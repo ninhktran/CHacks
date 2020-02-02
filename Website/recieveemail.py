@@ -1,47 +1,49 @@
 import imaplib
 
-class MessageReciever:
-    def __init__(self):
-        self.main()
 
-    def main(self):
-        MessageReciever.write_msg()
+class MessageReciever:
+    @staticmethod
+    def check_for_new():
+        return MessageReciever.write_msg()
 
     @staticmethod
     def get_msg():
         email_user = 'alphatester721@gmail.com'
         email_pass = '@Mamamia2'
-        mail = imaplib.IMAP4_SSL("imap.gmail.com",993)
+        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
         mail.login(email_user, email_pass)
         mail.select('INBOX')
 
         tmp, data = mail.search(None, 'Unseen')
         msgs = []
-        print(len(data[0].split()))
-        for num in data[0].split():
-            tmp, data = mail.fetch(num, '(RFC822)')
+        msg_nums = data[0]
+        # print(msg_nums)
+        print(len(msg_nums)//2)
+        if msg_nums:
+            # num is the index of the new message
+            num = msg_nums.split()[0]
+            tmp, msg_data = mail.fetch(num, '(RFC822)')
 
-            msgs.append(data[0][1])
-
-            break
+            msgs = msg_data[0][1]
         mail.close()
         return msgs
 
     @staticmethod
     def write_msg():
         msgs = MessageReciever.get_msg()
-        # print(msgs)
-        with open("bytes_message", 'w') as f:
-            f.write("")
-
-        with open("bytes_message", 'ab') as f:
-            for m in msgs:
-                f.write(m)
-        with open("string_message",'w') as f:
-            f.write("")
-        with open('string_message', 'a') as f:
-            for m in msgs:
-                f.write(str(m.decode("ASCII")))
+        if not msgs:
+            return False
+        else:
+            print(msgs, 2)
+            with open("bytes_message", 'w') as f:
+                f.write("")
+            with open("bytes_message", 'ab') as f:
+                f.write(msgs)
+            with open("string_message",'w') as f:
+                f.write("")
+            with open('string_message', 'a') as f:
+                f.write(str(msgs.decode("ASCII")))
+            return True
 
 if __name__ == "__main__":
-    MessageReciever()
+    MessageReciever.check_for_new()
