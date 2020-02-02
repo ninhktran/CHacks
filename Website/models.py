@@ -6,10 +6,6 @@ class Subscriber(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False)
     area = db.Column(db.String(120),nullable=False)
     topic = db.Column(db.String(120), nullable=False)
-    # everett = db.Column(db.Boolean(), default=False)
-    # skagit_county = db.Column(db.Boolean(), default=False)
-    # weather = db.Column(db.Boolean(), default=False)
-    # sports = db.Column(db.Boolean(), default=False)
 
     def __repr__(self):
         return f"User('{self.email}', '{self.area}', '{self.topic}')"

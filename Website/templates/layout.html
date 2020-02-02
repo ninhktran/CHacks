@@ -6,6 +6,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrapppp.css')}}">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
 </head>
+<header>
+    <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+    <a class="nav-item nav-link" href="{{ url_for('unsub') }}">Unsubscribe</a>
+</header>
 <body>
 {% with messages = get_flashed_messages(with_categories=True) %}
         {% if messages %}
