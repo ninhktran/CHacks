@@ -1,0 +1,490 @@
+Delivered-To: alphatester721@gmail.com
+Received: by 2002:a05:600c:2257:0:0:0:0 with SMTP id a23csp2565705wmm;
+        Sat, 1 Feb 2020 22:37:34 -0800 (PST)
+X-Received: by 2002:a1c:ac46:: with SMTP id v67mr21352792wme.153.1580625454770;
+        Sat, 01 Feb 2020 22:37:34 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1580625454; cv=none;
+        d=google.com; s=arc-20160816;
+        b=P5q6nzFvNbK1OOKrK1YEk47svGDv/79ECWO5x1PJdsb1gHtIONsqRlowVGHpHQSuHP
+         I6SdAktWo41pX7bRAJKnY5EaQqYt3QfV4/5VAHqw2Ac/U01X1cGvG4DSO98nmtkT4b/6
+         L6VtQCV8ju6RUpU4rdLDgwRD0qsSFeOzALQk9wd9f8zYDHjugBMPEMGfclCym+ehvVY8
+         jNyQ2+zRgGzFlU0fQ8ScZaGlB9GnxQXJwTlxSpii4exxHJNGq0W1OCQspitk+KaoLbFS
+         Qd0xEIqq7t8b9q8FR/Vu3SvXrQluPZhddhl4ZCwYR9FYZyt98IU24MTasJCNhwQvBN8J
+         B23Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=TDNnXHw64NDYBJCseTRMaKl7aSlTRQ9KtTi8Tr4sCxI=;
+        b=qtcRw10m6jue6u09AtojtN+qGr4WmRo6ZRGfzTK5KFRq/ZBZ5x3BYq4/eLNvH70+o1
+         AaRHPRbOFsg0XLIcuNOyFyiSJzdXg7KagHiCBYodaSa0WnCW9Sfxr3rdL5KSZSKksjxG
+         nl2hh6q+RAcRv7YgCgP4OQD8oRIAQY3e2X2vmn3x3wm4RKeznKoPl9Yz/ErzvU+yHkxN
+         PgjLl9esotgaOAN4f37CgjJ1KNjpOjub2+Q87RW6A+2vpeMDXWBo9aUcPklL37nJwH9m
+         nmcjkVDWe5/MKsQt+WiUJWwYKMpw8JAzD+atS2tDsaXD9Drlxjbuxooonpr9177OiXRt
+         G7BQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=n+UNzEDv;
+       spf=pass (google.com: domain of asp.anthony1@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=asp.anthony1@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <asp.anthony1@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 19sor8038420wmo.7.2020.02.01.22.37.34
+        for <alphatester721@gmail.com>
+        (Google Transport Security);
+        Sat, 01 Feb 2020 22:37:34 -0800 (PST)
+Received-SPF: pass (google.com: domain of asp.anthony1@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=n+UNzEDv;
+       spf=pass (google.com: domain of asp.anthony1@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=asp.anthony1@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
+        bh=TDNnXHw64NDYBJCseTRMaKl7aSlTRQ9KtTi8Tr4sCxI=;
+        b=n+UNzEDv08GU+dIQe9oj1lbi95MzILHk5PCTCBDZNZP5uamudWRAHmu2p1JLTvEf60
+         1jhLT8xMPZwfQ2Vn4B5EB89liFcjdJHXH7IhFil+EGVLaiR3kgLguuERiIxzHOgvNRlb
+         hAltLy1qaypsY5AX+5X92bVndWSDKNESsVqTI3xTr0cAqefGpYpI1iVvyGu9DmmCDPFB
+         Y52IbFjRZ4c4Ecr+nFi6EtWlf0viDONqHeu7Bx5DulEJ7+eyOgDgrfme5THEV/Y+4m+O
+         c0TNDkRybZZEUx3/NliXnPyVKFy77JkJfhReItGYqGKUgocd7rQHyfyMNyhKXV8WHIWI
+         ttyA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to;
+        bh=TDNnXHw64NDYBJCseTRMaKl7aSlTRQ9KtTi8Tr4sCxI=;
+        b=oJxDdwP9g8pWkmD5vgzsUkuHcD/gHv6EJctV9aFWgHFK+qFmfMY+C/X0+X+rHqqefx
+         KfWWiqp3Fz1ztE7tEHcpFSqE7CzHAYRwunuaeF7Yc2QTj5vbi8/c2/8SpueW3swaXX50
+         XAZmyDd3qgVNVWROirlTJQlONiFSieSC7FZIm05kqkZzI1/WDtP87Yg5aToikdDZ9wc2
+         CE6Uh/FAs9kfsyOMc3tmInAGGV9yoayniE2daIoUW1FPLtok2DpDfmn7KYZenxm4gr7t
+         LhQAkeb8rdxuutpe4mCHVKgWFlZNIECXN3So4qw5yKX2Zhza24qwja2GejuDFk8TQ66c
+         I6Nw==
+X-Gm-Message-State: APjAAAWQo6XZnw4ZVo58K3xInQjRNByfjG/vhvGaPVvMwIsoPGvUMbGT
+	zlxqsQz5k8rNR90mTKrn8bka8YnHG0T0OTntu/hVEEGZ
+X-Google-Smtp-Source: APXvYqzBWY+egapt0mLGdbhhE5/bJPvxsJH5QzxTHfQww0YrSG0jxquqn2lpEwQDPmpRPhXTK/nU9yjv1qlYotWpMi8=
+X-Received: by 2002:a1c:1fd0:: with SMTP id f199mr21329669wmf.113.1580625454051;
+ Sat, 01 Feb 2020 22:37:34 -0800 (PST)
+MIME-Version: 1.0
+References: <5e35bc88824e1_305f3ff28c8cd96c1178ea@github-highworker-e49e834.va3-iad.github.net.mail>
+In-Reply-To: <5e35bc88824e1_305f3ff28c8cd96c1178ea@github-highworker-e49e834.va3-iad.github.net.mail>
+From: Anthony Asp <asp.anthony1@gmail.com>
+Date: Sat, 1 Feb 2020 22:37:21 -0800
+Message-ID: <CALreMwA6UnNmLipGN1TbboeOGoK9t3bmMymBr7-eE-h85azQfg@mail.gmail.com>
+Subject: Fwd: passtheflask invited you to passtheflask/CHacks
+To: alphatester721@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000b6351a059d920a22"
+
+--000000000000b6351a059d920a22
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+---------- Forwarded message ---------
+From: passtheflask <noreply@github.com>
+Date: Sat, Feb 1, 2020 at 9:59 AM
+Subject: passtheflask invited you to passtheflask/CHacks
+To: Anthony Asp <asp.anthony1@gmail.com>
+
+
+[image: GitHub, Inc.] <https://github.com>
+[image: @passtheflask] [image: plus] [image: @AAspCodes]
+@passtheflask has invited you to collaborate on the
+*passtheflask/CHacks* repository
+------------------------------
+
+You can accept or decline
+<https://github.com/passtheflask/CHacks/invitations> this invitation. You
+can also head over to https://github.com/passtheflask/CHacks to check out
+the repository or visit @passtheflask <https://github.com/passtheflask> to
+learn a bit more about them.
+View invitation <https://github.com/passtheflask/CHacks/invitations>
+
+*Note:* This invitation was intended for *asp.anthony1@gmail.com
+<asp.anthony1@gmail.com>*. If you were not expecting this invitation, you
+can ignore this email. If @passtheflask is sending you too many emails, you
+can block them
+<https://github.com/settings/blocked_users?block_user=3Dpasstheflask> or re=
+port
+abuse <https://github.com/contact/report-abuse?report=3Dpasstheflask>.
+------------------------------
+
+*Getting a 404 error?* Make sure you=E2=80=99re signed in as *@AAspCodes*.
+
+*Button not working?* Copy and paste this link into your browser:
+https://github.com/passtheflask/CHacks/invitations
+
+Manage your GitHub email preferences <https://github.com/settings/emails>
+
+Terms <https://help.github.com/articles/github-terms-of-service/> =E2=80=A2=
+ Privacy
+<https://help.github.com/articles/github-privacy-policy/> =E2=80=A2 Log in =
+to GitHub
+<https://github.com/login>
+<https://github.com>
+
+GitHub, Inc.
+
+88 Colin P Kelly Jr Street
+
+San Francisco, CA 94107
+
+--000000000000b6351a059d920a22
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><br><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=
+=3D"gmail_attr">---------- Forwarded message ---------<br>From: <b class=3D=
+"gmail_sendername" dir=3D"auto">passtheflask</b> <span dir=3D"auto">&lt;<a =
+href=3D"mailto:noreply@github.com">noreply@github.com</a>&gt;</span><br>Dat=
+e: Sat, Feb 1, 2020 at 9:59 AM<br>Subject: passtheflask invited you to pass=
+theflask/CHacks<br>To: Anthony Asp &lt;<a href=3D"mailto:asp.anthony1@gmail=
+.com">asp.anthony1@gmail.com</a>&gt;<br></div><br><br><u></u>
+
+ =20
+   =20
+   =20
+
+   =20
+
+ =20
+<div bgcolor=3D"#fafafa" marginheight=3D"0" marginwidth=3D"0" style=3D"back=
+ground:#fafafa;color:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica=
+,Arial,sans-serif;font-size:14px;font-weight:normal;line-height:20px;margin=
+:0;min-width:100%;padding:0;text-align:center;width:100%!important">
+
+
+  <table style=3D"background:#fafafa;border-collapse:collapse;border-spacin=
+g:0;color:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans=
+-serif;font-size:14px;font-weight:normal;height:100%;line-height:20px;margi=
+n:0;padding:0;text-align:center;vertical-align:top;width:100%" bgcolor=3D"#=
+fafafa">
+    <tbody><tr style=3D"padding:0;text-align:center;vertical-align:top" ali=
+gn=3D"center">
+      <td style=3D"border-collapse:collapse!important;color:#333333;font-fa=
+mily:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:14px;fon=
+t-weight:normal;line-height:20px;margin:0;padding:0;text-align:center;verti=
+cal-align:top;word-break:break-word" valign=3D"top" align=3D"center">
+        <center style=3D"min-width:580px;width:100%">
+       =20
+
+          <table style=3D"border-collapse:collapse;border-spacing:0;padding=
+:0px;text-align:center;vertical-align:top;width:100%">
+            <tbody><tr style=3D"padding:0;text-align:center;vertical-align:=
+top" align=3D"center">
+              <td style=3D"border-collapse:collapse!important;color:#333333=
+;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:=
+14px;font-weight:normal;line-height:20px;margin:0;padding:0;text-align:cent=
+er;vertical-align:top;word-break:break-word" valign=3D"top" align=3D"center=
+">
+                <center style=3D"min-width:580px;width:100%">
+
+                  <table style=3D"border-collapse:collapse;border-spacing:0=
+;margin:0 auto;padding:0;text-align:inherit;vertical-align:top;width:580px"=
+>
+                    <tbody><tr style=3D"padding:0;text-align:center;vertica=
+l-align:top" align=3D"center">
+                      <td style=3D"border-collapse:collapse!important;color=
+:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:normal;line-height:20px;margin:0;padding:0 0px 0 0=
+;text-align:center;vertical-align:top;word-break:break-word" valign=3D"top"=
+ align=3D"center">
+
+                        <table style=3D"border-collapse:collapse;border-spa=
+cing:0;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:5=
+40px">
+                          <tbody><tr style=3D"padding:0;text-align:center;v=
+ertical-align:top" align=3D"center">
+                            <td style=3D"border-collapse:collapse!important=
+;color:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-se=
+rif;font-size:14px;font-weight:normal;line-height:20px;margin:0;padding:0px=
+ 0px 10px;text-align:center;vertical-align:top;word-break:break-word" valig=
+n=3D"top" align=3D"center">
+                              <div style=3D"text-align:center" align=3D"cen=
+ter">
+                               =20
+                                <a href=3D"https://github.com" style=3D"col=
+or:#4183c4;text-decoration:none" target=3D"_blank">
+                                  <img alt=3D"GitHub, Inc." src=3D"https://=
+github.githubassets.com/images/email/global/wordmark.png" style=3D"border:n=
+one;float:none;margin:0 auto;max-width:100%;outline:none;padding:25px 0 17p=
+x;text-align:center;text-decoration:none;width:auto" width=3D"102" height=
+=3D"28" align=3D"none">
+                                </a>
+                              </div>
+                            </td>
+                            <td style=3D"border-collapse:collapse!important=
+;color:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-se=
+rif;font-size:14px;font-weight:normal;line-height:20px;margin:0;padding:0;t=
+ext-align:center;vertical-align:top;width:0px;word-break:break-word" valign=
+=3D"top" align=3D"center"></td>
+                          </tr>
+                        </tbody></table>
+
+
+                      </td>
+                    </tr>
+                  </tbody></table>
+
+
+                </center>
+              </td>
+            </tr>
+          </tbody></table>
+
+
+          <table style=3D"border-collapse:collapse;border-spacing:0;margin:=
+0 auto;padding:0;text-align:inherit;vertical-align:top;width:580px">
+            <tbody><tr style=3D"padding:0;text-align:center;vertical-align:=
+top" align=3D"center">
+              <td style=3D"border-collapse:collapse!important;color:#333333=
+;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:=
+14px;font-weight:normal;line-height:20px;margin:0;padding:0;text-align:cent=
+er;vertical-align:top;word-break:break-word" valign=3D"top" align=3D"center=
+">
+
+                <table style=3D"border-collapse:collapse;border-spacing:0;d=
+isplay:block;padding:0px;text-align:center;vertical-align:top;width:100%">
+                  <tbody><tr style=3D"padding:0;text-align:center;vertical-=
+align:top" align=3D"center">
+                    <td style=3D"border-collapse:collapse!important;color:#=
+333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font=
+-size:14px;font-weight:normal;line-height:20px;margin:0;padding:0 0px 0 0;t=
+ext-align:center;vertical-align:top;word-break:break-word" valign=3D"top" a=
+lign=3D"center">
+
+                      <div style=3D"background:#ffffff;border-radius:3px;bo=
+rder:1px solid #dddddd;padding:20px">
+
+                        <table style=3D"border-collapse:collapse;border-spa=
+cing:0;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:5=
+40px">
+                          <tbody><tr style=3D"padding:0;text-align:center;v=
+ertical-align:top" align=3D"center">
+                            <td style=3D"border-collapse:collapse!important=
+;color:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-se=
+rif;font-size:14px;font-weight:normal;line-height:20px;margin:0;padding:0px=
+ 0px 0;text-align:center;vertical-align:top;word-break:break-word" valign=
+=3D"top" align=3D"center">
+
+                              <div>
+
+                                <div style=3D"padding:15px 0 10px">
+  <img src=3D"https://avatars3.githubusercontent.com/u/60550924?s=3D120&amp=
+;v=3D4" alt=3D"@passtheflask" style=3D"border-radius:3px;max-width:100%;out=
+line:none;overflow:hidden;text-decoration:none;width:auto" width=3D"60" hei=
+ght=3D"60">
+  <img alt=3D"plus" src=3D"https://github.githubassets.com/images/email/org=
+anization/octicon-plus.png" style=3D"max-width:100%;outline:none;text-decor=
+ation:none;width:auto" height=3D"60">
+  <img src=3D"https://avatars2.githubusercontent.com/u/46567012?s=3D120&amp=
+;v=3D4" alt=3D"@AAspCodes" style=3D"border-radius:3px;max-width:100%;outlin=
+e:none;overflow:hidden;text-decoration:none;width:auto" width=3D"60" height=
+=3D"60">
+</div>
+
+<h1 style=3D"color:#333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Aria=
+l,sans-serif;font-size:24px;font-weight:300;line-height:1.2;margin:10px 0 2=
+5px;padding:0;text-align:center;word-break:normal" align=3D"center">@passth=
+eflask has invited you to collaborate on the<br><b>passtheflask/CHacks</b> =
+repository</h1>
+
+<hr style=3D"background:#d9d9d9;border:none;color:#d9d9d9;height:1px;margin=
+:20px 0">
+
+<p style=3D"color:#333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial=
+,sans-serif;font-size:14px;font-weight:normal;line-height:20px;margin:15px =
+0 5px;padding:0;text-align:left;word-wrap:normal" align=3D"left">
+  You can <a href=3D"https://github.com/passtheflask/CHacks/invitations" st=
+yle=3D"color:#4183c4;text-decoration:none" target=3D"_blank">accept or decl=
+ine</a> this invitation.
+  You can also head over to <a href=3D"https://github.com/passtheflask/CHac=
+ks" style=3D"color:#4183c4;text-decoration:none" target=3D"_blank">https://=
+github.com/passtheflask/CHacks</a> to check out the repository or visit <a =
+href=3D"https://github.com/passtheflask" style=3D"color:#4183c4;text-decora=
+tion:none" target=3D"_blank">@passtheflask</a> to learn a bit more about th=
+em.
+</p>
+
+
+<div style=3D"color:#ffffff;padding:20px 0 25px;text-align:center" align=3D=
+"center">
+
+    <a href=3D"https://github.com/passtheflask/CHacks/invitations" style=3D=
+"background:#28a73f linear-gradient(-180deg,#34d058 0%,#28a745 90%);border-=
+radius:5px;color:#fff;display:inline-block;font-family:&#39;Helvetica Neue&=
+#39;,Helvetica,Arial,sans-serif;font-size:14px;font-weight:600;letter-spaci=
+ng:normal;margin:0 auto;padding:6px 12px;text-align:center;text-decoration:=
+none;width:auto!important" target=3D"_blank">View invitation</a>
+
+</div>
+
+
+<p style=3D"color:#333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial=
+,sans-serif;font-size:13px;font-weight:normal;line-height:20px;margin:15px =
+0 5px;padding:0;text-align:left;word-wrap:normal" align=3D"left">
+  <b>Note:</b> This invitation was intended for <b><a href=3D"mailto:asp.an=
+thony1@gmail.com" target=3D"_blank">asp.anthony1@gmail.com</a></b>.
+  If you were not expecting this invitation, you can ignore this email.
+    If  @passtheflask is sending you too many emails, you can
+    <a href=3D"https://github.com/settings/blocked_users?block_user=3Dpasst=
+heflask" style=3D"color:#4183c4;text-decoration:none" target=3D"_blank">blo=
+ck them</a>
+    or <a href=3D"https://github.com/contact/report-abuse?report=3Dpassthef=
+lask" style=3D"color:#4183c4;text-decoration:none" target=3D"_blank">report=
+ abuse</a>.
+</p>
+
+<hr style=3D"background:#d9d9d9;border:none;color:#d9d9d9;height:1px;margin=
+:20px 0">
+
+<p style=3D"color:#777777;font-family:&#39;Helvetica Neue&#39;,Helvetica,Ar=
+ial,sans-serif;font-size:12px;font-weight:normal;line-height:20px;margin:15=
+px 0 5px;padding:0;text-align:left;word-wrap:normal" align=3D"left">
+  <b>Getting a 404 error?</b> Make sure you=E2=80=99re signed in as <b>@AAs=
+pCodes</b>.
+</p>
+
+<p style=3D"color:#777777;font-family:&#39;Helvetica Neue&#39;,Helvetica,Ar=
+ial,sans-serif;font-size:12px;font-weight:normal;line-height:20px;margin:15=
+px 0 5px;padding:0;text-align:left;word-wrap:normal" align=3D"left">
+  <b>Button not working?</b> Copy and paste this link into your browser:
+  <br><a href=3D"https://github.com/passtheflask/CHacks/invitations" style=
+=3D"color:#4183c4;text-decoration:none" target=3D"_blank">https://github.co=
+m/passtheflask/CHacks/invitations</a>
+</p>
+
+
+                              </div>
+
+
+                            </td>
+                            <td style=3D"border-collapse:collapse!important=
+;color:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-se=
+rif;font-size:14px;font-weight:normal;line-height:20px;margin:0;padding:0;t=
+ext-align:center;vertical-align:top;width:0px;word-break:break-word" valign=
+=3D"top" align=3D"center"></td>
+                          </tr>
+                        </tbody></table>
+
+
+                      </div>
+
+
+                    </td>
+                  </tr>
+                </tbody></table>
+
+
+              </td>
+            </tr>
+          </tbody></table>
+
+
+          <table style=3D"border-collapse:collapse;border-spacing:0;padding=
+:0px;text-align:center;vertical-align:top;width:100%">
+            <tbody><tr style=3D"padding:0;text-align:center;vertical-align:=
+top" align=3D"center">
+              <td style=3D"border-collapse:collapse!important;color:#333333=
+;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:=
+14px;font-weight:normal;line-height:20px;margin:0;padding:0;text-align:cent=
+er;vertical-align:top;word-break:break-word" valign=3D"top" align=3D"center=
+">
+                <center style=3D"min-width:580px;width:100%">
+
+                  <table style=3D"border-collapse:collapse;border-spacing:0=
+;margin:0 auto;padding:0;text-align:inherit;vertical-align:top;width:580px"=
+>
+                    <tbody><tr style=3D"padding:0;text-align:center;vertica=
+l-align:top" align=3D"center">
+                      <td style=3D"border-collapse:collapse!important;color=
+:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-serif;fo=
+nt-size:14px;font-weight:normal;line-height:20px;margin:0;padding:0 0px 0 0=
+;text-align:center;vertical-align:top;word-break:break-word" valign=3D"top"=
+ align=3D"center">
+
+                        <table style=3D"border-collapse:collapse;border-spa=
+cing:0;margin:0 auto;padding:0;text-align:center;vertical-align:top;width:5=
+40px">
+                          <tbody><tr style=3D"padding:0;text-align:center;v=
+ertical-align:top" align=3D"center">
+                            <td style=3D"border-collapse:collapse!important=
+;color:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-se=
+rif;font-size:14px;font-weight:normal;line-height:20px;margin:0;padding:0px=
+ 0px 10px;text-align:center;vertical-align:top;word-break:break-word" valig=
+n=3D"top" align=3D"center">
+                              <div style=3D"padding:20px 0;text-align:cente=
+r" align=3D"center">
+                               =20
+                                <p style=3D"color:#999;font-family:&#39;Hel=
+vetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:12px;font-weight:norm=
+al;line-height:20px;margin:0;padding:0;text-align:center;word-wrap:normal" =
+align=3D"center"><a href=3D"https://github.com/settings/emails" style=3D"co=
+lor:#4183c4;text-decoration:none" target=3D"_blank">Manage your GitHub emai=
+l preferences</a></p>
+                                <p style=3D"color:#999;font-family:&#39;Hel=
+vetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:12px;font-weight:norm=
+al;line-height:20px;margin:0;padding:0;text-align:center;word-wrap:normal" =
+align=3D"center">
+                                    <a href=3D"https://help.github.com/arti=
+cles/github-terms-of-service/" style=3D"color:#4183c4;text-decoration:none"=
+ target=3D"_blank">Terms</a> =E2=80=A2
+                                    <a href=3D"https://help.github.com/arti=
+cles/github-privacy-policy/" style=3D"color:#4183c4;text-decoration:none" t=
+arget=3D"_blank">Privacy</a> =E2=80=A2
+                                  <a href=3D"https://github.com/login" styl=
+e=3D"color:#4183c4;text-decoration:none" target=3D"_blank">Log in to GitHub=
+</a>
+                                </p>
+                              </div>
+                              <div style=3D"margin:0 0 15px">
+                               =20
+                                <a href=3D"https://github.com" style=3D"col=
+or:#4183c4;text-decoration:none" target=3D"_blank">
+                                  <img src=3D"https://github.githubassets.c=
+om/images/email/global/footer-mark.png" style=3D"border:none;max-width:100%=
+;outline:none;text-decoration:none;width:auto" width=3D"40" height=3D"38">
+                                </a>
+                              </div>
+                              <div style=3D"margin:0 0 15px">
+                                <p style=3D"color:#999;font-family:&#39;Hel=
+vetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:12px;font-weight:norm=
+al;line-height:20px;margin:0;padding:0;text-align:center;word-wrap:normal" =
+align=3D"center">GitHub, Inc.</p>
+                                <p style=3D"color:#999;font-family:&#39;Hel=
+vetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:12px;font-weight:norm=
+al;line-height:20px;margin:0;padding:0;text-align:center;word-wrap:normal" =
+align=3D"center">88 Colin P Kelly Jr Street</p>
+                                <p style=3D"color:#999;font-family:&#39;Hel=
+vetica Neue&#39;,Helvetica,Arial,sans-serif;font-size:12px;font-weight:norm=
+al;line-height:20px;margin:0;padding:0;text-align:center;word-wrap:normal" =
+align=3D"center">San Francisco, CA 94107</p>
+                              </div>
+                            </td>
+                            <td style=3D"border-collapse:collapse!important=
+;color:#333333;font-family:&#39;Helvetica Neue&#39;,Helvetica,Arial,sans-se=
+rif;font-size:14px;font-weight:normal;line-height:20px;margin:0;padding:0;t=
+ext-align:center;vertical-align:top;width:0px;word-break:break-word" valign=
+=3D"top" align=3D"center"></td>
+                          </tr>
+                        </tbody></table>
+
+
+                      </td>
+                    </tr>
+                  </tbody></table>
+
+
+                </center>
+              </td>
+            </tr>
+          </tbody></table>
+
+
+       =20
+        </center>
+      </td>
+    </tr>
+  </tbody></table>
+
+</div>
+
+</div></div>
+
+--000000000000b6351a059d920a22--
