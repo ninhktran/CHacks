@@ -25,9 +25,9 @@ li a {
 }
 
 li a:hover:not(.active) {
-  background-color: #ddd;
+  background-color: white;
     text-decoration: none;
-    color: #1eb6cb;
+    color: #187e8c;
 }
 
 /*li a.active {*/
