@@ -1,8 +1,9 @@
 from Website.sending import MessageSender
 from Website.recieveemail import MessageReciever
-from Website.find_sub import get_meta_data
 from Website.dbQuery import check_valid_email, get_interested_subs
 
+from email.parser import BytesParser
+from email.policy import default
 
 class EmailForwarder:
     cat_dict = {'Events': ['holiday',
@@ -43,14 +44,15 @@ class EmailForwarder:
                             'hail',
                             'fog',
                             'frost']}
-
-    def __init__(self):
+    @staticmethod
+    def checking():
         while True:
-            self.main()
+            EmailForwarder.main()
 
-    def main(self):
+    @staticmethod
+    def main():
         MessageReciever()
-        to, frm, subject = get_meta_data()
+        to, frm, subject = EmailForwarder.get_meta_data()
         if frm:
             print(frm)
             clean_frm = frm.split()[-1]
@@ -94,6 +96,15 @@ class EmailForwarder:
                 matching_topics.append(key.lower())
         return matching_loc, matching_topics
 
+    @staticmethod
+    def get_meta_data():
+        with open('bytes_message', 'rb') as fp:
+            headers = BytesParser(policy=default).parse(fp)
+        to = headers['to']
+        frm = headers['from']
+        subject = headers['subject']
+        return to, frm, subject
+
 
 if __name__ == "__main__":
-    EmailForwarder()
+    EmailForwarder.checking()
