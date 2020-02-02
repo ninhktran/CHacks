@@ -13,7 +13,7 @@
         <div class="form-group">
             {% if form.email.errors %}
             {{ form.email( class="form-control form-control-lg" )}}
-            <label class="email_prompt">Please enter your email address</label>
+            <label class="email_prompt">We don't have that address</label>
             <div class="invalid-feedback">
                 {% for error in form.email.errors %}
                 <span>{{ error }}</span>

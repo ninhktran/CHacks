@@ -32,3 +32,7 @@ class UnSubscribeForm(FlaskForm):
         if not subscriber:
             raise ValidationError(
                 'That email is not in our system.')
+    #
+    # def validate_certainty(self, are_you_sure):
+    #     if not are_you_sure.data:
+    #         raise ValidationError('click to be sure')
