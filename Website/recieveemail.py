@@ -1,27 +1,30 @@
 import imaplib
 
-class MessageReciever:
-    def __init__(self):
-        self.main()
 
-    def main(self):
-        MessageReciever.write_msg()
+class MessageReciever:
+    @staticmethod
+    def check_for_new():
+        return MessageReciever.write_msg()
 
     @staticmethod
     def get_msg():
         email_user = 'alphatester721@gmail.com'
         email_pass = '@Mamamia2'
-        mail = imaplib.IMAP4_SSL("imap.gmail.com",993)
+        mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
         mail.login(email_user, email_pass)
         mail.select('INBOX')
 
         tmp, data = mail.search(None, 'Unseen')
         msgs = []
-        print(len(data[0].split()))
-        for num in data[0].split():
-            tmp, data = mail.fetch(num, '(RFC822)')
+        msg_nums = data[0]
+        print(msg_nums)
+        print(len(msg_nums)//2)
+        if msg_nums:
+            # num is the index of the new message
+            num = msg_nums.split()[0]
+            tmp, msg_data = mail.fetch(num, '(RFC822)')
 
-            msgs.append(data[0][1])
+            msgs = msg_data[0][1]
 
             break
         mail.close()
