@@ -9,7 +9,9 @@ mail = imaplib.IMAP4_SSL("imap.gmail.com",993)
 mail.login(email_user, email_pass)
 mail.select('INBOX')
 type, data = mail.search(None, 'UNSEEN')
-mail_ids = data[0]
+
+mail_ids = [int(num) for num in str(data[0].decode('ASCII')).split()]
+
 id_list = mail_ids.split()
 for num in data[0].split():
     typ, data = mail.fetch(num, '(RFC822)' )
