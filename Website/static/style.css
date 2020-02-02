@@ -1,47 +1,22 @@
-    html {
-        scroll-behavior: smooth;
+    body {
+        height: 800px;
+        background: linear-gradient(141deg, #0fb8ad 0%, #2cb5e8 90%);
     }
 
-    body {
-        height: 3000px;
-        background: linear-gradient(141deg, #0fb8ad 40%, #1fc8db 60%, #2cb5e8 75%);
+    .controllll {
+        display: flex;
+        flex-direction: column;
     }
 
     .welcome-text {
         font-size: 40px;
         color: white;
         font-family: 'Raleway', sans-serif;
-        margin-top: 6em;
+        margin-top: 2em;
     }
 
     .main_page {
         text-align: center;
-    }
-
-    .subscribe {
-      background-color: #fff;
-      padding: 16px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 26px;
-      margin: 4px 2px;
-      -webkit-transition-duration: 0.4s;
-      transition-duration: 0.4s;
-      cursor: pointer;
-        margin-top: 40px;
-        border-radius: 5px;
-    }
-
-    .subscribe:hover {
-        color: white !important;
-        background-color: #1b6469;
-        border: none;
-    }
-
-    #section1 {
-        height: 600px;
-        bacground-color: black;
     }
 
     .secondary-text {
@@ -52,9 +27,22 @@
     }
 
     .email_prompt {
-          position:absolute;
           font-size: 22px;
           font-weight: 200;
           color: white;
           z-index: 9999;
+    }
+
+    div.control_checkbox {
+        display: inline;
+    }
+
+    div.checkbox_title {
+        font-size: 23px !important;
+        color: white !important;
+    }
+
+    .submit_button {
+        height: 300px;
+        width: 100%;
     }

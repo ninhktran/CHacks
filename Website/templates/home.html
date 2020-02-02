@@ -1,49 +1,82 @@
 {% extends "layout.html" %}
 {% block content %}
-    <section class="main_page" id="section1">
-        <div class="welcome-text">Welcome! to Skagit county notification central!</div>
-        <div class="secondary-text">Sign up to receive notifications from local gov agencies</div>
+<div class="container">
+    <div class="main_page" id="section1">
+        <div class="welcome-text">Welcome! to Snohomish county notification central!</div>
+        <div class="secondary-text">Sign up to receive notifications from your local government agencies</div>
+        {#
         <button class="subscribe" onclick="window.location.href = '#section2'">Subscribe</button>
-    </section>
-    <div class="container">
-        <form method="POST" action="">
+        #}
+    </div>
+    <form method="POST" action="">
         {{ form.hidden_tag() }}
-            <div class="form-group" id="section2">
-                    {% if form.email.errors %}
-                        {{ form.email( class="form-control form-control-lg" )}}
-                        <label class="email_prompt">Please enter your email address</label>
-                        <span class="enter"></span>
-                        <div class="invalid-feedback">
-                          {% for error in form.email.errors %}
-                            <span>{{ error }}</span>
-                          {% endfor %}
-                        </div>
-                        {% else %}
-                          {{ form.email() }}
-                    {% endif %}
+        <div class="form-group">
+            {% if form.email.errors %}
+            {{ form.email( class="form-control form-control-lg" )}}
+            <label class="email_prompt">Please enter your email address</label>
+            <div class="invalid-feedback">
+                {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
             </div>
-
-                <h2>Area</h2>
+            {% else %}
+            <div id="section2">
+                <br>
+                <br>
+                <label class="email_prompt">Please enter your email address:</label><br><br>
+                {{ form.email( class="form-control form-control-lg" ) }}
+                {#
+                <button type="button" class="btn btn-info" onclick="window.location.href = '#section3'">Next</button>
+                #}
+            </div>
+            {% endif %}
+        </div>
+        <br>
+        <div class="container" style="display: flex;
+justify-content: space-between; width:50%; margin-left: 20px;">
+            <div class="control_checkbox">
+                <div class="checkbox_title">Area:</div>
                 <div>
-                    {{ form.everett() }}
-                    {{ form.everett.label() }}
+                    {{ form.everett(class="checkbox_this")}}
+                    <label style="color: lightyellow; font-size: 20px;">Everett</label>
                 </div>
                 <div>
-                    {{ form.skagit_county() }}
-                    {{ form.skagit_county.label() }}
+                    {{ form.lake_stevens(class="checkbox_this")}}
+                    <label style="color: lightyellow; font-size: 20px;">Lake Stevens</label>
                 </div>
-                <h2>Topic</h2>
+                <div>
+                    {{ form.snohomish_county()}}
+                    <label style="color: lightyellow; font-size: 20px;">Snohomish County</label>
+                </div>
+            </div>
+            <div</div>
+            <div class="control_checkbox">
+                <div class="checkbox_title">Topic:</div>
                 <div>
                     {{ form.weather() }}
-                    {{ form.weather.label() }}
+                    <label style="color: lightyellow; font-size: 20px;">Weather</label>
                 </div>
                 <div>
                     {{ form.sports() }}
-                    {{ form.sports.label() }}
+                    <label style="color: lightyellow; font-size: 20px;">Sports</label>
                 </div>
                 <div>
-                    {{ form.submit() }}
+                    {{ form.events() }}
+                    <label style="color: lightyellow; font-size: 20px;">Events</label>
                 </div>
-        </form>
-    </div>
+                <div>
+                    {{ form.traffic() }}
+                    <label style="color: lightyellow; font-size: 20px;">Traffic</label>
+                </div>
+                <div>
+                    {{ form.emergency() }}
+                    <label style="color: lightyellow; font-size: 20px;">Emergency</label>
+                </div>
+            </div>
+            <span class="submit_button">
+                        {{ form.submit(class="btn btn-info") }}
+                </span>
+        </div>
+    </form>
+</div>
 {% endblock content %}
