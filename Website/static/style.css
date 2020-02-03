@@ -1,48 +1,108 @@
-    body {
-        height: 800px;
-        background: linear-gradient(141deg, #0fb8ad 0%, #2cb5e8 90%);
-    }
+body {
+    height: 800px;
+    background: linear-gradient(141deg, #0fb8ad 0%, #2cb5e8 90%);
+}
 
-    .controllll {
-        display: flex;
-        flex-direction: column;
-    }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1eb6cb;
+    color: white;
+}
 
-    .welcome-text {
-        font-size: 40px;
-        color: white;
-        font-family: 'Raleway', sans-serif;
-        margin-top: 2em;
-    }
+li {
+  float: left;
+}
 
-    .main_page {
-        text-align: center;
-    }
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
 
-    .secondary-text {
-        color: lightyellow;
-        font-size: 20px;
-        font-family: 'Raleway', sans-serif;
-        margin-top: 20px;
-    }
+li a:hover:not(.active) {
+  background-color: white;
+    text-decoration: none;
+    color: #187e8c;
+}
 
-    .email_prompt {
-          font-size: 22px;
-          font-weight: 200;
-          color: white;
-          z-index: 9999;
-    }
+/*li a.active {*/
+/*  color: white;*/
+/*  background-color: white;*/
+/*}*/
 
-    div.control_checkbox {
-        display: inline;
-    }
+.controllll {
+    display: flex;
+    flex-direction: column;
+}
 
-    div.checkbox_title {
-        font-size: 23px !important;
-        color: white !important;
-    }
+.welcome-text {
+    font-size: 40px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 2em;
+}
 
-    .submit_button {
-        height: 300px;
-        width: 100%;
-    }
+.main_page {
+    text-align: center;
+}
+
+.secondary-text {
+    color: lightyellow;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 20px;
+}
+
+.email_prompt {
+    font-size: 22px;
+    font-weight: 200;
+    color: white;
+    z-index: 9999;
+}
+
+div.control_checkbox {
+    display: inline;
+}
+
+div.checkbox_title {
+    font-size: 23px !important;
+    color: white !important;
+}
+
+.submit_button {
+    height: 300px;
+    width: 100%;
+}
+
+.home-link{
+    width: 20%;
+    /*float: left;*/
+    /*text-align: center;*/
+    margin: 0% 0% 1% 0%;
+    border: 5px solid white;
+}
+
+.unsub-link {
+    color: white;
+    width: 20%;
+    /*text-align: center;*/
+    /*float: left;*/
+    /*margin: 0% 0% 0% 40%;*/
+    border: 5px solid white;
+
+}
+.links {
+    /*margin: 0% 10% 0% 10%;*/
+    /*border: 10px solid white;*/
+
+}
+
+.link-box {
+    width: 100%;
+    text-align: center;
+}

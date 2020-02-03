@@ -28,7 +28,10 @@ class EmailForwarder:
                             'crash',
                             'accidents',
                             'construction'],
-                'Weather': ['forecast',
+                'Sports':['sports',
+                          'game'],
+                'Weather': ['weather',
+                            'forecast',
                             'rain',
                             'sunny',
                             'blizzard',
@@ -55,6 +58,7 @@ class EmailForwarder:
             return
         else:
             to, frm, subject = EmailForwarder.get_meta_data()
+            print(frm)
             if frm:
                 clean_frm = EmailForwarder.clean_sender(frm)
                 subject = str(subject)
@@ -79,6 +83,7 @@ class EmailForwarder:
         clean_frm = sender.split()[-1]
         clean_frm = clean_frm.split("<")[1]
         clean_frm = clean_frm.split(">")[0]
+        return clean_frm
 
 
     @staticmethod

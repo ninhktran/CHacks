@@ -24,7 +24,6 @@ class RegistrationFrom(FlaskForm):
 
 class UnSubscribeForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
-    are_you_sure = BooleanField('Are you sure you want to unsubscribe?')
     submit = SubmitField('Submit')
 
     def validate_email(self, email):
